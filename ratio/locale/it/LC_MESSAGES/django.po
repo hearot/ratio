@@ -1,0 +1,318 @@
+# Copyright (C) 2019 Hearot
+# This file is distributed under the same license as the ratio package.
+# Hearot <gabriel@hearot.it>, 2019.
+
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-29 20:52+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Hearot <gabriel@hearot.it>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\ratio\settings.py:80
+msgid "English"
+msgstr "Inglese"
+
+#: .\ratio\settings.py:81
+msgid "Italian"
+msgstr "Italiano"
+
+#: .\school\forms.py:18
+msgid "Password"
+msgstr "Password"
+
+#: .\school\forms.py:24
+msgid "Remember me"
+msgstr "Ricordami"
+
+#: .\school\forms.py:33
+msgid "You entered an invalid password."
+msgstr "Hai inserito una password non valida."
+
+#: .\school\forms.py:39
+msgid "Username"
+msgstr "Nome utente"
+
+#: .\school\forms.py:52
+msgid "You entered an invalid username."
+msgstr "Hai inserito un nome utente non valido."
+
+#: .\school\forms.py:55 .\school\forms.py:79 .\school\forms.py:103
+#: .\school\forms.py:190 .\school\forms.py:208 .\school\forms.py:251
+msgid "This account is not active."
+msgstr "Questo account non è attivo."
+
+#: .\school\forms.py:63 .\school\forms.py:115 .\school\forms.py:154
+#: .\school\forms.py:180 .\school\forms.py:221 .\school\forms.py:241
+msgid "Email"
+msgstr "Email"
+
+#: .\school\forms.py:76 .\school\forms.py:161 .\school\forms.py:187
+#: .\school\forms.py:248
+msgid "You entered an invalid email address."
+msgstr "Hai inserito un indirizzo email non valido."
+
+#: .\school\forms.py:87 .\school\forms.py:128 .\school\forms.py:198
+msgid "Email or Username"
+msgstr "Email o nome utente"
+
+#: .\school\forms.py:100 .\school\forms.py:135 .\school\forms.py:205
+msgid "You entered an invalid email address or username."
+msgstr "Hai inserito un indirizzo email o un nome utente errato."
+
+#: .\school\forms.py:115
+msgid "Required. Enter an existing email address."
+msgstr "Richiesto. Inserisci un indirizzo email esistente."
+
+#: .\school\forms.py:122
+msgid "You can not use this email address."
+msgstr "Non puoi utilizzare questo indirizzo email."
+
+#: .\school\forms.py:138 .\school\forms.py:164
+msgid "This account has already been activated."
+msgstr "Quest'account è già stato attivato."
+
+#: .\school\forms.py:142 .\school\forms.py:168
+msgid "Activation code not found."
+msgstr "Codice d'attivazione non trovato."
+
+#: .\school\forms.py:146 .\school\forms.py:172
+msgid ""
+"Activation code has already been sent. You can request a new code in 24 "
+"hours."
+msgstr ""
+"Il codice d'attivazione è già stato inviato. Puoi richiedere un nuovo codice "
+"tra 24 ore."
+
+#: .\school\forms.py:216
+msgid "First name"
+msgstr "Nome"
+
+#: .\school\forms.py:217
+msgid "Last name"
+msgstr "Cognome"
+
+#: .\school\forms.py:231
+msgid "Please enter another email."
+msgstr "Per favore, inserisci un'altra email"
+
+#: .\school\forms.py:235
+msgid "You can not use this mail."
+msgstr "Non puoi utilizzare questa email."
+
+#: .\school\templates\layouts\default\page.html:28
+msgid "Home"
+msgstr "Home"
+
+#: .\school\templates\layouts\default\page.html:38
+#: .\school\templates\school\profile\change_password.html:8
+msgid "Change password"
+msgstr "Cambia password"
+
+#: .\school\templates\layouts\default\page.html:41
+#: .\school\templates\school\profile\change_profile.html:8
+msgid "Change profile"
+msgstr "Cambia profilo"
+
+#: .\school\templates\layouts\default\page.html:44
+#: .\school\templates\school\profile\change_email.html:8 .\school\utils.py:28
+msgid "Change email"
+msgstr "Cambia email"
+
+#: .\school\templates\layouts\default\page.html:47
+msgid "Log out"
+msgstr "Esci"
+
+#: .\school\templates\layouts\default\page.html:51
+#: .\school\templates\school\log_in.html:8
+#: .\school\templates\school\log_in.html:15
+#: .\school\templates\school\remind_username.html:23
+#: .\school\templates\school\resend_activation_code.html:23
+#: .\school\templates\school\restore_password.html:23
+msgid "Log in"
+msgstr "Entra"
+
+#: .\school\templates\layouts\default\page.html:54
+#: .\school\templates\school\sign_up.html:8
+msgid "Create an account"
+msgstr "Crea un account"
+
+#: .\school\templates\school\emails\activate_profile.html:15
+#: .\school\templates\school\emails\activate_profile.txt:3
+msgid "To activate your profile, please follow this link:"
+msgstr "Per attivare il tuo profilo, per favore utilizza questo link:"
+
+#: .\school\templates\school\emails\change_email.html:13
+#: .\school\templates\school\emails\change_email.txt:3
+msgid "To change your current email address, please follow the link:"
+msgstr "Per cambiare il tuo indirizzo email attivo, per favore "
+"utilizza questo link:"
+
+#: .\school\templates\school\emails\forgotten_username.html:15
+#: .\school\templates\school\emails\forgotten_username.txt:3
+msgid "Your username is:"
+msgstr "Il tuo nome utente è:"
+
+#: .\school\templates\school\emails\restore_password_email.html:15
+#: .\school\templates\school\emails\restore_password_email.txt:3
+msgid ""
+"You received this email because you requested a password reset for your user "
+"account."
+msgstr ""
+"Hai ricevuto questa email perché hai richiesto di reimpostare la tua password "
+"per il tuo account."
+
+#: .\school\templates\school\emails\restore_password_email.html:19
+#: .\school\templates\school\emails\restore_password_email.txt:5
+msgid "Please, go to the following page and choose a new password:"
+msgstr "Per favore, vai alla seguente pagina e scegli una nuova password:"
+
+#: .\school\templates\school\log_in.html:23
+msgid "Forgot your password?"
+msgstr "Hai dimenticato la password?"
+
+#: .\school\templates\school\log_in.html:26
+msgid "Forgot your username?"
+msgstr "Hai dimenticato il tuo nome utente?"
+
+#: .\school\templates\school\log_in.html:29
+#: .\school\templates\school\resend_activation_code.html:8
+msgid "Resend an activation code"
+msgstr "Re-invia un codice d'attivazione"
+
+#: .\school\templates\school\log_out.html:7
+msgid "Logged out"
+msgstr "Uscito"
+
+#: .\school\templates\school\log_out.html:10
+msgid "Thanks for spending some quality time with the site today."
+msgstr "Ti ringraziamo della tua attività su questo sito oggi."
+
+#: .\school\templates\school\log_out.html:14
+msgid "Log in again"
+msgstr "Entra di nuovo"
+
+#: .\school\templates\school\profile\change_email.html:15
+#: .\school\templates\school\profile\change_password.html:15
+#: .\school\templates\school\profile\change_profile.html:15
+#: .\school\templates\school\restore_password_confirm.html:21
+msgid "Change"
+msgstr "Cambia"
+
+#: .\school\templates\school\remind_username.html:8
+msgid "Remind a username"
+msgstr "Ricorda il nome utente"
+
+#: .\school\templates\school\remind_username.html:15
+#: .\school\templates\school\resend_activation_code.html:15
+#: .\school\templates\school\restore_password.html:15
+msgid "Next"
+msgstr "Prossima"
+
+#: .\school\templates\school\restore_password.html:8
+#: .\school\templates\school\restore_password_confirm.html:8
+#: .\school\templates\school\restore_password_done.html:7 .\school\utils.py:37
+msgid "Restore password"
+msgstr "Ristabilisci la password"
+
+#: .\school\templates\school\restore_password_confirm.html:13
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+"Per favore, inserisci la tua nuova password due volte così che possiamo "
+"verificare che tu l'abbia scritta correttamente."
+
+#: .\school\templates\school\restore_password_confirm.html:28
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset."
+msgstr ""
+"Il link per reimpostare la password non è valido, è possibile che sia già stato "
+"utilizzato. Per favore, richiedi di reimpostare la password nuovamente."
+
+#: .\school\templates\school\restore_password_done.html:10
+msgid ""
+"We've emailed you instructions for setting your password, if an account "
+"exists with the email you entered."
+msgstr ""
+"Ti abbiamo mandato per email le istruzioni per impostare la tua password, se un account "
+"con l'email che hai inserito esiste."
+
+#: .\school\templates\school\restore_password_done.html:11
+msgid "You should receive them shortly."
+msgstr "Dovresti riceverle a breve."
+
+#: .\school\templates\school\restore_password_done.html:15
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you signed up with, and check your spam folder."
+msgstr ""
+"Se non ricevi alcuna email, per favore controlla se hai inserito l'indirizzo email "
+"con cui ti sei registrato e se l'email è presente nella cartella spam."
+
+#: .\school\templates\school\sign_up.html:15
+msgid "Create"
+msgstr "Crea"
+
+#: .\school\utils.py:19
+msgid "Profile activation"
+msgstr "Attivazione del profilo"
+
+#: .\school\utils.py:47
+msgid "Your username"
+msgstr "Il tuo nome utente"
+
+#: .\school\views.py:124
+msgid ""
+"You are signed up. To activate the account, follow the link sent to the mail."
+msgstr ""
+"Ti sei registrato. Per attivare il tuo account, utilizzare il link che ti abbiamo inviato per email."
+
+#: .\school\views.py:131
+msgid "You are successfully signed up!"
+msgstr "Ti sei registrato con successo!"
+
+#: .\school\views.py:149
+msgid "You have successfully activated your account!"
+msgstr "Hai attivato il tuo account con successo!"
+
+#: .\school\views.py:179
+msgid "A new activation code has been sent to your email address."
+msgstr "Un nuovo codice d'attivazione è stato inviato al tuo indirizzo email."
+
+#: .\school\views.py:221
+msgid "Profile data has been successfully updated."
+msgstr "I dati del profilo sono stati aggiornati con successo."
+
+#: .\school\views.py:255
+msgid "To complete the change of email address, click on the link sent to it."
+msgstr "Per completare il cambiamento dell'email, clicca sul link inviato a quest'ultima."
+
+#: .\school\views.py:260
+msgid "Email successfully changed."
+msgstr "Email cambiata con successo."
+
+#: .\school\views.py:278
+msgid "You have successfully changed your email!"
+msgstr "Hai cambiato la tua email con successo!"
+
+#: .\school\views.py:291
+msgid "Your username has been successfully sent to your email."
+msgstr "Il tuo nome utente è stato inviato alla tua email con successo."
+
+#: .\school\views.py:306
+msgid "Your password was changed."
+msgstr "La tua password è stata cambiata."
+
+#: .\school\views.py:318
+msgid "Your password has been set. You may go ahead and log in now."
+msgstr "La tua password è stata impostata. Adesso puoi andare avanti ed effettuare il login."

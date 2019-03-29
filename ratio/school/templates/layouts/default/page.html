@@ -25,7 +25,6 @@
 <body>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark static-top">
-
     <a class="navbar-brand" href="/">{% trans 'Home' %}</a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault">
@@ -55,19 +54,24 @@
                     <a class="nav-link" href="{% url 'school:sign_up' %}">{% trans 'Create an account' %}</a>
                 </li>
             {% endif %}
+            <li class="nav-item">
+                <a href="/en" hreflang="en"><abbr lang="en"
+                                                  title="{% trans 'English' %}">{% trans 'English' %}</abbr></a>
+            </li>
+            <li class="nav-item">
+                <a href="/it" hreflang="it"><abbr lang="it"
+                                                  title="{% trans 'Italian' %}">{% trans 'Italian' %}</abbr></a>
+            </li>
         </ul>
     </div>
-
 </nav>
 
 <div class="container-fluid mt-3">
-
     {% bootstrap_messages %}
 
     {% block content %}
-        No content.
+        You're using {{ language_code }} as well. {% trans 'Create an account' %}
     {% endblock %}
-
 </div>
 
 <script src="{% static 'vendor/jquery/jquery-3.3.1.min.js' %}"></script>

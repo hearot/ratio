@@ -1,14 +1,17 @@
+from django.conf.urls import url
 from django.urls import path
 
 from .views import (
     LogInView, ResendActivationCodeView, RemindUsernameView, SignUpView, ActivateView, LogOutView,
     ChangeEmailView, ChangeEmailActivateView, ChangeProfileView, ChangePasswordView,
-    RestorePasswordView, RestorePasswordDoneView, RestorePasswordConfirmView,
+    RestorePasswordView, RestorePasswordDoneView, RestorePasswordConfirmView, IndexView
 )
 
 app_name = 'school'
 
 urlpatterns = [
+    url('^$', IndexView.as_view(), name='index'),
+
     path('login/', LogInView.as_view(), name='log_in'),
     path('logout/', LogOutView.as_view(), name='log_out'),
 
