@@ -1,3 +1,4 @@
 django>=2.1.7
 django-bootstrap4
 django-environ
+django-tinymce
