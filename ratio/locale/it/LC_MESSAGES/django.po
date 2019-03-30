@@ -119,8 +119,8 @@ msgstr "Cambia password"
 
 #: .\school\templates\layouts\default\page.html:41
 #: .\school\templates\school\profile\change_profile.html:8
-msgid "Change profile"
-msgstr "Cambia profilo"
+msgid "Update profile"
+msgstr "Aggiorna profilo"
 
 #: .\school\templates\layouts\default\page.html:44
 #: .\school\templates\school\profile\change_email.html:8 .\school\utils.py:28
