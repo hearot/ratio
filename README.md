@@ -8,7 +8,7 @@
     <br>
 </p>
 
-[![License: MIT License](https://img.shields.io/badge/License-GNU%20General%20Public%20License%20v3-blue.svg)](https://github.com/hearot/thelatinlibrary/blob/master/LICENSE) [![Developer: Hearot](https://img.shields.io/badge/Developer-%20Hearot-red.svg)](https://hearot.it)
+[![License: MIT License](https://img.shields.io/badge/License-MIT%20License-blue.svg)](https://github.com/hearot/thelatinlibrary/blob/master/LICENSE) [![Developer: Hearot](https://img.shields.io/badge/Developer-%20Hearot-red.svg)](https://hearot.it)
 
 **Ratio** (from Latin, *ratio, -onis*, "intelligence, sum, etc...") is the platform where you can find other mathematicians and *fight* them.
 
