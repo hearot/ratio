@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from .models import Competition, Contestant, Question
 
 admin.site.register(Competition)
