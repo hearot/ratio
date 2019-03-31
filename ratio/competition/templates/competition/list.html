@@ -4,6 +4,43 @@
 {% load i18n %}
 
 {% block content %}
+    <main role="main">
+
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading">{% trans 'Competitions' %}</h1>
+                <p class="lead text-muted">{% trans 'Fight other mathematicians & let them know who is the coolest mathematician in the the world.' %}</p>
+            </div>
+        </section>
+
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    {% for competition in competitions %}
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                                <div class="card-body">
+                                    <h1>{{ competition.title }}</h1>
+                                    <p class="card-text">{{ competition.description }}</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <a href="join/{{ competition.id }}">
+                                                <button type="button"
+                                                        class="btn btn-sm btn-outline-primary">{% trans 'Join' %}</button>
+                                            </a>
+                                        </div>
+                                        <small class="text-muted">{% trans 'Starts on' %} {{ competition.start|date:"SHORT_DATE_FORMAT" }}</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </main>
+
     <nav aria-label="Page navigation example">
         <ul class="pagination">
             {% if competitions.has_previous %}

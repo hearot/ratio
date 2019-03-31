@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-31 16:06+0200\n"
+"POT-Creation-Date: 2019-03-31 20:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hearot <gabriel@hearot.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,23 +16,42 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\competition\templates\competition\list.html:10
-#, fuzzy
-#| msgid "Next"
+#: .\competition\templates\competition\list.html:11
+#: .\school\templates\layouts\default\page.html:38
+msgid "Competitions"
+msgstr "Competizioni"
+
+#: .\competition\templates\competition\list.html:12
+msgid ""
+"Fight other mathematicians & let them know who is the coolest mathematician "
+"in the the world."
+msgstr ""
+"Combatti con altri appassionati di matematica e fai capire a loro chi è il matematico "
+"più figo del mondo."
+
+#: .\competition\templates\competition\list.html:27
+msgid "Join"
+msgstr "Partecipa"
+
+#: .\competition\templates\competition\list.html:29
+msgid "Starts on"
+msgstr "Inizia il"
+
+#: .\competition\templates\competition\list.html:45
 msgid "Next page"
 msgstr "Pagina successiva"
 
-#: .\competition\templates\competition\list.html:13
+#: .\competition\templates\competition\list.html:50
 msgid "Previous page"
 msgstr "Pagina precedente"
 
-#: .\ratio\settings.py:84 .\school\templates\layouts\default\page.html:71
-#: .\school\templates\layouts\default\page.html:76
+#: .\ratio\settings.py:84 .\school\templates\layouts\default\page.html:70
+#: .\school\templates\layouts\default\page.html:75
 msgid "English"
 msgstr "Inglese"
 
-#: .\ratio\settings.py:85 .\school\templates\layouts\default\page.html:68
-#: .\school\templates\layouts\default\page.html:79
+#: .\ratio\settings.py:85 .\school\templates\layouts\default\page.html:67
+#: .\school\templates\layouts\default\page.html:78
 msgid "Italian"
 msgstr "Italiano"
 
@@ -119,34 +138,30 @@ msgstr "Per favore, inserisci un'altra email"
 msgid "You can not use this mail."
 msgstr "Non puoi utilizzare questa email."
 
-#: .\school\templates\layouts\default\page.html:30
+#: .\school\templates\layouts\default\page.html:29
 msgid "Home"
 msgstr "Home"
 
-#: .\school\templates\layouts\default\page.html:39
-msgid "Competitions"
-msgstr "Competizioni"
-
-#: .\school\templates\layouts\default\page.html:44
+#: .\school\templates\layouts\default\page.html:43
 #: .\school\templates\school\profile\change_password.html:8
 msgid "Change password"
 msgstr "Cambia password"
 
-#: .\school\templates\layouts\default\page.html:47
+#: .\school\templates\layouts\default\page.html:46
 #: .\school\templates\school\profile\change_profile.html:8
 msgid "Update profile"
 msgstr "Aggiorna profilo"
 
-#: .\school\templates\layouts\default\page.html:50
+#: .\school\templates\layouts\default\page.html:49
 #: .\school\templates\school\profile\change_email.html:8 .\school\utils.py:36
 msgid "Change email"
 msgstr "Cambia email"
 
-#: .\school\templates\layouts\default\page.html:53
+#: .\school\templates\layouts\default\page.html:52
 msgid "Log out"
 msgstr "Esci"
 
-#: .\school\templates\layouts\default\page.html:57
+#: .\school\templates\layouts\default\page.html:56
 #: .\school\templates\school\log_in.html:8
 #: .\school\templates\school\log_in.html:15
 #: .\school\templates\school\remind_username.html:23
@@ -155,10 +170,14 @@ msgstr "Esci"
 msgid "Log in"
 msgstr "Entra"
 
-#: .\school\templates\layouts\default\page.html:60
+#: .\school\templates\layouts\default\page.html:59
 #: .\school\templates\school\sign_up.html:8
 msgid "Create an account"
 msgstr "Crea un account"
+
+#: .\school\templates\layouts\default\page.html:100
+msgid "Back to top"
+msgstr "Torna all'inizio"
 
 #: .\school\templates\school\emails\activate_profile.html:15
 #: .\school\templates\school\emails\activate_profile.txt:3
@@ -168,8 +187,7 @@ msgstr "Per attivare il tuo profilo, per favore utilizza questo link:"
 #: .\school\templates\school\emails\change_email.html:13
 #: .\school\templates\school\emails\change_email.txt:3
 msgid "To change your current email address, please follow the link:"
-msgstr ""
-"Per cambiare il tuo indirizzo email attivo, per favore utilizza questo link:"
+msgstr "Per cambiare il tuo indirizzo email attivo, per favore utilizza questo link:"
 
 #: .\school\templates\school\emails\forgotten_username.html:15
 #: .\school\templates\school\emails\forgotten_username.txt:3
