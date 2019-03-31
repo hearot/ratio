@@ -4,5 +4,6 @@ from django.contrib import admin
 
 urlpatterns = i18n_patterns(
     url(r'^admin/', admin.site.urls),
-    url('', include('school.urls', namespace='school'))
+    url('', include('school.urls', namespace='school')),
+    url('', include('competition.urls', namespace='competition'))
 )

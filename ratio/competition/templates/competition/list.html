@@ -1,0 +1,21 @@
+{% extends 'layouts/default/page.html' %}
+
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            {% if competitions.has_previous %}
+                <li class="page-item"><a class="page-link"
+                                         href="/competitions/{{ competitions.previous_page_number }}">{% trans 'Next page' %}</a>
+                </li>
+            {% endif %}
+            {% if competitions.has_next %}
+                <li class="page-item"><a class="page-link"
+                                         href="/competitions/{{ competitions.next_page_number }}">{% trans 'Previous page' %}</a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endblock %}

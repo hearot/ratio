@@ -1,13 +1,12 @@
 # Copyright (C) 2019 Hearot
 # This file is distributed under the same license as the ratio package.
 # Hearot <gabriel@hearot.it>, 2019.
-
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-29 20:52+0100\n"
+"POT-Creation-Date: 2019-03-31 16:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hearot <gabriel@hearot.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +16,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\ratio\settings.py:80
+#: .\competition\templates\competition\list.html:10
+#, fuzzy
+#| msgid "Next"
+msgid "Next page"
+msgstr "Pagina successiva"
+
+#: .\competition\templates\competition\list.html:13
+msgid "Previous page"
+msgstr "Pagina precedente"
+
+#: .\ratio\settings.py:84 .\school\templates\layouts\default\page.html:71
+#: .\school\templates\layouts\default\page.html:76
 msgid "English"
 msgstr "Inglese"
 
-#: .\ratio\settings.py:81
+#: .\ratio\settings.py:85 .\school\templates\layouts\default\page.html:68
+#: .\school\templates\layouts\default\page.html:79
 msgid "Italian"
 msgstr "Italiano"
 
@@ -108,30 +119,34 @@ msgstr "Per favore, inserisci un'altra email"
 msgid "You can not use this mail."
 msgstr "Non puoi utilizzare questa email."
 
-#: .\school\templates\layouts\default\page.html:28
+#: .\school\templates\layouts\default\page.html:30
 msgid "Home"
 msgstr "Home"
 
-#: .\school\templates\layouts\default\page.html:38
+#: .\school\templates\layouts\default\page.html:39
+msgid "Competitions"
+msgstr "Competizioni"
+
+#: .\school\templates\layouts\default\page.html:44
 #: .\school\templates\school\profile\change_password.html:8
 msgid "Change password"
 msgstr "Cambia password"
 
-#: .\school\templates\layouts\default\page.html:41
+#: .\school\templates\layouts\default\page.html:47
 #: .\school\templates\school\profile\change_profile.html:8
 msgid "Update profile"
 msgstr "Aggiorna profilo"
 
-#: .\school\templates\layouts\default\page.html:44
-#: .\school\templates\school\profile\change_email.html:8 .\school\utils.py:28
+#: .\school\templates\layouts\default\page.html:50
+#: .\school\templates\school\profile\change_email.html:8 .\school\utils.py:36
 msgid "Change email"
 msgstr "Cambia email"
 
-#: .\school\templates\layouts\default\page.html:47
+#: .\school\templates\layouts\default\page.html:53
 msgid "Log out"
 msgstr "Esci"
 
-#: .\school\templates\layouts\default\page.html:51
+#: .\school\templates\layouts\default\page.html:57
 #: .\school\templates\school\log_in.html:8
 #: .\school\templates\school\log_in.html:15
 #: .\school\templates\school\remind_username.html:23
@@ -140,7 +155,7 @@ msgstr "Esci"
 msgid "Log in"
 msgstr "Entra"
 
-#: .\school\templates\layouts\default\page.html:54
+#: .\school\templates\layouts\default\page.html:60
 #: .\school\templates\school\sign_up.html:8
 msgid "Create an account"
 msgstr "Crea un account"
@@ -153,8 +168,8 @@ msgstr "Per attivare il tuo profilo, per favore utilizza questo link:"
 #: .\school\templates\school\emails\change_email.html:13
 #: .\school\templates\school\emails\change_email.txt:3
 msgid "To change your current email address, please follow the link:"
-msgstr "Per cambiare il tuo indirizzo email attivo, per favore "
-"utilizza questo link:"
+msgstr ""
+"Per cambiare il tuo indirizzo email attivo, per favore utilizza questo link:"
 
 #: .\school\templates\school\emails\forgotten_username.html:15
 #: .\school\templates\school\emails\forgotten_username.txt:3
@@ -167,8 +182,8 @@ msgid ""
 "You received this email because you requested a password reset for your user "
 "account."
 msgstr ""
-"Hai ricevuto questa email perché hai richiesto di reimpostare la tua password "
-"per il tuo account."
+"Hai ricevuto questa email perché hai richiesto di reimpostare la tua "
+"password per il tuo account."
 
 #: .\school\templates\school\emails\restore_password_email.html:19
 #: .\school\templates\school\emails\restore_password_email.txt:5
@@ -219,7 +234,7 @@ msgstr "Prossima"
 
 #: .\school\templates\school\restore_password.html:8
 #: .\school\templates\school\restore_password_confirm.html:8
-#: .\school\templates\school\restore_password_done.html:7 .\school\utils.py:37
+#: .\school\templates\school\restore_password_done.html:7 .\school\utils.py:47
 msgid "Restore password"
 msgstr "Ristabilisci la password"
 
@@ -236,16 +251,16 @@ msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used. Please request a new password reset."
 msgstr ""
-"Il link per reimpostare la password non è valido, è possibile che sia già stato "
-"utilizzato. Per favore, richiedi di reimpostare la password nuovamente."
+"Il link per reimpostare la password non è valido, è possibile che sia già "
+"stato utilizzato. Per favore, richiedi di reimpostare la password nuovamente."
 
 #: .\school\templates\school\restore_password_done.html:10
 msgid ""
 "We've emailed you instructions for setting your password, if an account "
 "exists with the email you entered."
 msgstr ""
-"Ti abbiamo mandato per email le istruzioni per impostare la tua password, se un account "
-"con l'email che hai inserito esiste."
+"Ti abbiamo mandato per email le istruzioni per impostare la tua password, se "
+"un account con l'email che hai inserito esiste."
 
 #: .\school\templates\school\restore_password_done.html:11
 msgid "You should receive them shortly."
@@ -256,18 +271,18 @@ msgid ""
 "If you don't receive an email, please make sure you've entered the address "
 "you signed up with, and check your spam folder."
 msgstr ""
-"Se non ricevi alcuna email, per favore controlla se hai inserito l'indirizzo email "
-"con cui ti sei registrato e se l'email è presente nella cartella spam."
+"Se non ricevi alcuna email, per favore controlla se hai inserito l'indirizzo "
+"email con cui ti sei registrato e se l'email è presente nella cartella spam."
 
 #: .\school\templates\school\sign_up.html:15
 msgid "Create"
 msgstr "Crea"
 
-#: .\school\utils.py:19
+#: .\school\utils.py:25
 msgid "Profile activation"
 msgstr "Attivazione del profilo"
 
-#: .\school\utils.py:47
+#: .\school\utils.py:59
 msgid "Your username"
 msgstr "Il tuo nome utente"
 
@@ -275,7 +290,8 @@ msgstr "Il tuo nome utente"
 msgid ""
 "You are signed up. To activate the account, follow the link sent to the mail."
 msgstr ""
-"Ti sei registrato. Per attivare il tuo account, utilizzare il link che ti abbiamo inviato per email."
+"Ti sei registrato. Per attivare il tuo account, utilizzare il link che ti "
+"abbiamo inviato per email."
 
 #: .\school\views.py:131
 msgid "You are successfully signed up!"
@@ -295,7 +311,9 @@ msgstr "I dati del profilo sono stati aggiornati con successo."
 
 #: .\school\views.py:255
 msgid "To complete the change of email address, click on the link sent to it."
-msgstr "Per completare il cambiamento dell'email, clicca sul link inviato a quest'ultima."
+msgstr ""
+"Per completare il cambiamento dell'email, clicca sul link inviato a "
+"quest'ultima."
 
 #: .\school\views.py:260
 msgid "Email successfully changed."
@@ -315,4 +333,6 @@ msgstr "La tua password è stata cambiata."
 
 #: .\school\views.py:318
 msgid "Your password has been set. You may go ahead and log in now."
-msgstr "La tua password è stata impostata. Adesso puoi andare avanti ed effettuare il login."
+msgstr ""
+"La tua password è stata impostata. Adesso puoi andare avanti ed effettuare "
+"il login."
