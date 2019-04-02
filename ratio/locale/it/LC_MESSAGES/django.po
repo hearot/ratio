@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-02 18:40+0200\n"
+"POT-Creation-Date: 2019-04-02 19:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hearot <gabriel@hearot.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,6 +27,12 @@ msgstr "Devi avere effettuato l'accesso per partecipare ad un competizione!"
 #: .\competition\templates\competition\list.html:50
 msgid "Join"
 msgstr "Partecipa"
+
+#: .\competition\templates\competition\join.html:9
+#, fuzzy
+#| msgid "You are successfully signed up!"
+msgid "You successfully joined the competition!"
+msgstr "Ti sei registrato con successo!"
 
 #: .\competition\templates\competition\list.html:27
 #: .\school\templates\layouts\default\page.html:41
@@ -187,7 +193,11 @@ msgstr "Entra"
 msgid "Create an account"
 msgstr "Crea un account"
 
-#: .\school\templates\layouts\default\page.html:104
+#: .\school\templates\layouts\default\page.html:94
+msgid "An error occured."
+msgstr "Si è verificato un errore."
+
+#: .\school\templates\layouts\default\page.html:110
 msgid "Back to top"
 msgstr "Torna all'inizio"
 

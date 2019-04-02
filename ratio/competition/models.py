@@ -21,6 +21,8 @@ class Answer(models.Model):
     right = models.BooleanField()
     """If the given Answer is right"""
 
+    unique_together = ("contestant", "question", "right")
+
     def __str__(self) -> str:
         """Returns a representation of the object."""
         return str("%s (±%s)" % (self.question, self.point))
@@ -44,6 +46,8 @@ class Competition(models.Model):
 
     title = models.CharField(max_length=20)
     """The title of the question"""
+
+    unique_together = ("title", "start", "end")
 
     def __str__(self) -> str:
         """Returns a representation of the object."""
@@ -75,6 +79,8 @@ class Contestant(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     """The associated user."""
+
+    unique_together = ("competition", "user")
 
     def __str__(self) -> str:
         """Returns a representation of the object."""
@@ -132,6 +138,8 @@ class Question(models.Model):
 
     title = models.CharField(max_length=35)
     """The title of the question"""
+
+    unique_together = ("title", "competition")
 
     def __str__(self) -> str:
         """Returns a representation of the object."""

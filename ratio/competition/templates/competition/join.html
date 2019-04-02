@@ -1,0 +1,21 @@
+{% extends 'layouts/default/page.html' %}
+
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+    <main role="main">
+        <div class="alert alert-success" role="alert">
+            {% trans 'You successfully joined the competition!' %}
+        </div>
+
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading">{{ competition.title }}</h1>
+                <p class="card-text">{{ competition.tag }}</p>
+            </div>
+        </section>
+
+        {{ competition.description|safe }}
+    </main>
+{% endblock %}

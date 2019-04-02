@@ -89,6 +89,12 @@
 <div class="container-fluid mt-3">
     {% bootstrap_messages %}
 
+    {% if error %}
+        <div class="alert alert-danger" role="alert">
+            {% trans 'An error occured.' %}
+        </div>
+    {% endif %}
+
     {% block content %}
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mauris risus, molestie a nunc eget, porttitor
         iaculis augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at dictum nunc, sed rutrum erat.
