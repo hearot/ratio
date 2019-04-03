@@ -3,6 +3,7 @@ from typing import Dict, List
 import tinymce.models
 from django.contrib.auth.models import User
 from django.db import models
+from django.utils import timezone
 
 
 class Answer(models.Model):
@@ -69,6 +70,14 @@ class Competition(models.Model):
         """Returns a list of all the Questions that
         are proposed during the Competition."""
         return Question.objects.filter(competition=self)
+
+    def has_ended(self) -> bool:
+        """If the Competition has ended."""
+        return timezone.now() >= self.end
+
+    def has_started(self) -> bool:
+        """If the Competition has started."""
+        return timezone.now() >= self.start
 
 
 class Contestant(models.Model):

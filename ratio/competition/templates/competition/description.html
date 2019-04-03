@@ -32,7 +32,7 @@
         {{ competition.description|safe }}
 
         {% if request.user.is_authenticated %}
-            <a href="/join/{{ competition.id }}">
+            <a href="{% url "competition:join_competition" pk=competition.id %}">
                 <button type="button"
                         class="btn btn-sm btn-outline-primary">{% trans 'Join' %}</button>
             </a>
