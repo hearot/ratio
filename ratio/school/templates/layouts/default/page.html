@@ -91,7 +91,11 @@
 
     {% if error %}
         <div class="alert alert-danger" role="alert">
-            {% trans 'An error occured.' %}
+            {% if error_message %}
+                {{ error_message }}
+            {% else %}
+                {% trans 'An error occured.' %}
+            {% endif %}
         </div>
     {% endif %}
 

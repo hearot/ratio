@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-02 19:22+0200\n"
+"POT-Creation-Date: 2019-04-03 19:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hearot <gabriel@hearot.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .\competition\templates\competition\description.html:19
-#: .\competition\templates\competition\list.html:19
+#: .\competition\templates\competition\list.html:19 .\competition\views.py:41
 msgid "You must be logged in to join a competition!"
 msgstr "Devi avere effettuato l'accesso per partecipare ad un competizione!"
 
@@ -29,8 +29,6 @@ msgid "Join"
 msgstr "Partecipa"
 
 #: .\competition\templates\competition\join.html:9
-#, fuzzy
-#| msgid "You are successfully signed up!"
 msgid "You successfully joined the competition!"
 msgstr "Ti sei registrato con successo!"
 
@@ -62,6 +60,14 @@ msgstr "Pagina successiva"
 #: .\competition\templates\competition\list.html:78
 msgid "Previous page"
 msgstr "Pagina precedente"
+
+#: .\competition\views.py:36
+msgid "The competition you want to join doesn't exist!"
+msgstr "La competizione a cui vuoi unirti non esiste!"
+
+#: .\competition\views.py:48
+msgid "You've already joined this competition!"
+msgstr "Ti sei già unito a questa competizione!"
 
 #: .\ratio\settings.py:85 .\school\templates\layouts\default\page.html:73
 #: .\school\templates\layouts\default\page.html:78
@@ -193,11 +199,11 @@ msgstr "Entra"
 msgid "Create an account"
 msgstr "Crea un account"
 
-#: .\school\templates\layouts\default\page.html:94
+#: .\school\templates\layouts\default\page.html:95
 msgid "An error occured."
 msgstr "Si è verificato un errore."
 
-#: .\school\templates\layouts\default\page.html:110
+#: .\school\templates\layouts\default\page.html:114
 msgid "Back to top"
 msgstr "Torna all'inizio"
 
