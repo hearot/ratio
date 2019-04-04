@@ -59,7 +59,7 @@
                                             {% endif %}
                                             <a href="{% url "competition:competition_description" pk=competition.id %}">
                                                 <button type="button"
-                                                        class="btn btn-sm btn-outline-secondary mr-1">{% trans 'Description' %}</button>
+                                                        class="btn btn-sm btn-outline-success mr-1">{% trans 'Description' %}</button>
                                             </a>
                                         </div>
                                         {% if not competition.has_started %}
@@ -84,12 +84,12 @@
         <ul class="pagination">
             {% if competitions.has_previous %}
                 <li class="page-item"><a class="page-link"
-                                         href="/competitions/{{ competitions.previous_page_number }}">{% trans 'Next page' %}</a>
+                                         href="{% url "competition:competitions" page=competitions.previous_page_number %}">{% trans 'Next page' %}</a>
                 </li>
             {% endif %}
             {% if competitions.has_next %}
                 <li class="page-item"><a class="page-link"
-                                         href="/competitions/{{ competitions.next_page_number }}">{% trans 'Previous page' %}</a>
+                                         href="{% url "competition:competitions" page=competitions.next_page_number %}">{% trans 'Previous page' %}</a>
                 </li>
             {% endif %}
         </ul>

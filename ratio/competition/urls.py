@@ -1,10 +1,11 @@
 from django.urls import path
 
-from .views import CompetitionView, competitions, join_competition
+from .views import api_leaderboard, CompetitionView, competitions, join_competition
 
 app_name = 'competition'
 
 urlpatterns = [
+    path('api/competition/<int:pk>/leaderboard', api_leaderboard, name='api_leaderboard'),
     path('competition/description/<int:pk>', CompetitionView.as_view(), name='competition_description'),
     path('competitions', competitions, name='competitions_default'),
     path('competitions/<int:page>', competitions, name='competitions'),

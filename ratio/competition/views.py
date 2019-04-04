@@ -1,10 +1,30 @@
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.paginator import EmptyPage, Paginator
+from django.http import JsonResponse
 from django.shortcuts import render
 from django.utils.translation import gettext_lazy as _
 from django.views import generic
 
 from .models import Competition, Contestant, User
+
+
+def api_leaderboard(request, pk: int = 1):
+    """Returns a JSON containing all the information
+    about the Competition, including points & Contestants."""
+    try:
+        competition = Competition.objects.get(id=pk)
+
+        return JsonResponse({'ok': True, 'code': 200,
+                             'error_message': "",
+                             'result': competition.get_leaderboard()})
+    except ObjectDoesNotExist:
+        return JsonResponse({'ok': False, 'code': 404,
+                             'error_message': _("The Competition you want to watch doesn't exist!"),
+                             'result': {}})
+    except Exception:
+        return JsonResponse({'ok': False, 'code': 500,
+                             'error_message': _("An error occured."),
+                             'result': {}})
 
 
 class CompetitionView(generic.DetailView):

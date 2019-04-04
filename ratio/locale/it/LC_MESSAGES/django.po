@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-04 18:26+0200\n"
+"POT-Creation-Date: 2019-04-04 18:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hearot <gabriel@hearot.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .\competition\templates\competition\description.html:19
-#: .\competition\templates\competition\list.html:19 .\competition\views.py:53
+#: .\competition\templates\competition\list.html:19 .\competition\views.py:73
 msgid "You must be logged in to join a competition!"
 msgstr "Devi avere effettuato l'accesso per partecipare ad un competizione!"
 
@@ -73,20 +73,27 @@ msgstr "Pagina successiva"
 msgid "Previous page"
 msgstr "Pagina precedente"
 
-#: .\competition\views.py:36
+#: .\competition\views.py:22
+msgid "The Competition you want to watch doesn't exist!"
+msgstr "La competizione che vuoi seguire non esiste!"
+
+#: .\competition\views.py:26 .\school\templates\layouts\default\page.html:97
+msgid "An error occured."
+msgstr "Si è verificato un errore."
+
+#: .\competition\views.py:56
 msgid "The competition you want to join doesn't exist!"
 msgstr "La competizione a cui vuoi unirti non esiste!"
 
-#: .\competition\views.py:41
+#: .\competition\views.py:61
 msgid "The competition you want to join has already begun!"
 msgstr "La competizione a cui vuoi unirti è già iniziata!"
 
-#: .\competition\views.py:47
-#| msgid "The competition you want to join has already begun!"
+#: .\competition\views.py:67
 msgid "The competition you want to join is already over!"
 msgstr "La competizione a cui vuoi unirti è già finita!"
 
-#: .\competition\views.py:60
+#: .\competition\views.py:80
 msgid "You've already joined this competition!"
 msgstr "Ti sei già unito a questa competizione!"
 
@@ -220,13 +227,9 @@ msgstr "Entra"
 msgid "Create an account"
 msgstr "Crea un account"
 
-#: .\school\templates\layouts\default\page.html:97
-msgid "An error occured."
-msgstr "Si è verificato un errore."
-
 #: .\school\templates\layouts\default\page.html:114
 msgid "Back to top"
-msgstr "Torna all'inizio"
+msgstr "Torna in cima"
 
 #: .\school\templates\school\emails\activate_profile.html:15
 #: .\school\templates\school\emails\activate_profile.txt:3
