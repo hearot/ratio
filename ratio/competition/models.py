@@ -68,8 +68,12 @@ class Competition(models.Model):
         """Returns a dictionary where the key is
         an username and the value is a list with all
         the points got by the user."""
-        return {contestant.user.username: contestant.get_list_points() for contestant in
-                self.get_contestants()}
+        leaderboard = {contestant.user.username: contestant.get_list_points() for contestant in
+                       self.get_contestants()}
+
+        return {key: leaderboard[key] for key in sorted(leaderboard,
+                                                        key=lambda key: sum(leaderboard[key])
+                                                        if leaderboard[key] else 0, reverse=True)}
 
     def get_questions(self) -> List['Question']:
         """Returns a list of all the Questions that
@@ -83,6 +87,11 @@ class Competition(models.Model):
     def has_started(self) -> bool:
         """If the Competition has started."""
         return timezone.now() >= self.start
+
+    def how_many_questions(self) -> int:
+        """Returns the length of the Questions
+        list."""
+        return len(self.get_questions())
 
 
 class Contestant(models.Model):
@@ -124,7 +133,7 @@ class Contestant(models.Model):
             return 0
 
     def get_total_points(self) -> int:
-        """Return the total points."""
+        """Returns the total points."""
         try:
             return sum(*self.get_list_points())
         except TypeError:

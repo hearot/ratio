@@ -40,8 +40,8 @@
                                     <p class="card-text">{{ competition.tag }}</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            {% if competition.has_started and not competition.has_ended %}
-                                                <a href="/watch/{{ competition.id }}">
+                                            {% if competition.has_started %}
+                                                <a href="{% url "competition:watch_competition" pk=competition.id %}">
                                                     <button type="button"
                                                             class="btn btn-sm btn-outline-danger mr-1">{% trans 'Watch it!' %}</button>
                                                 </a>

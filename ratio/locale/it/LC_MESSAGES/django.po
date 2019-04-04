@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-04 18:45+0200\n"
+"POT-Creation-Date: 2019-04-04 20:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hearot <gabriel@hearot.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,12 @@ msgid "You must be logged in to join a competition!"
 msgstr "Devi avere effettuato l'accesso per partecipare ad un competizione!"
 
 #: .\competition\templates\competition\description.html:37
-#: .\competition\templates\competition\description.html:41
+#: .\competition\templates\competition\list.html:46
+msgid "Watch it!"
+msgstr "Seguila!"
+
+#: .\competition\templates\competition\description.html:44
+#: .\competition\templates\competition\description.html:48
 #: .\competition\templates\competition\list.html:53
 #: .\competition\templates\competition\list.html:57
 msgid "Join"
@@ -32,8 +37,20 @@ msgstr "Partecipa"
 msgid "You successfully joined the competition!"
 msgstr "Ti sei registrato con successo!"
 
+#: .\competition\templates\competition\leaderboard.html:9
+msgid "Leaderboard"
+msgstr "Classifica"
+
+#: .\competition\templates\competition\leaderboard.html:20
+msgid "Rank"
+msgstr "Posizione"
+
+#: .\competition\templates\competition\leaderboard.html:23
+msgid "Name"
+msgstr "Nome"
+
 #: .\competition\templates\competition\list.html:27
-#: .\school\templates\layouts\default\page.html:41
+#: .\school\templates\layouts\default\page.html:42
 msgid "Competitions"
 msgstr "Competizioni"
 
@@ -44,10 +61,6 @@ msgid ""
 msgstr ""
 "Combatti con altri appassionati di matematica e fai capire a loro chi è il "
 "matematico più figo del mondo."
-
-#: .\competition\templates\competition\list.html:46
-msgid "Watch it!"
-msgstr "Seguila!"
 
 #: .\competition\templates\competition\list.html:62
 msgid "Description"
@@ -77,7 +90,7 @@ msgstr "Pagina precedente"
 msgid "The Competition you want to watch doesn't exist!"
 msgstr "La competizione che vuoi seguire non esiste!"
 
-#: .\competition\views.py:26 .\school\templates\layouts\default\page.html:97
+#: .\competition\views.py:26 .\school\templates\layouts\default\page.html:98
 msgid "An error occured."
 msgstr "Si è verificato un errore."
 
@@ -97,13 +110,13 @@ msgstr "La competizione a cui vuoi unirti è già finita!"
 msgid "You've already joined this competition!"
 msgstr "Ti sei già unito a questa competizione!"
 
-#: .\ratio\settings.py:85 .\school\templates\layouts\default\page.html:73
-#: .\school\templates\layouts\default\page.html:78
+#: .\ratio\settings.py:85 .\school\templates\layouts\default\page.html:74
+#: .\school\templates\layouts\default\page.html:79
 msgid "English"
 msgstr "Inglese"
 
-#: .\ratio\settings.py:86 .\school\templates\layouts\default\page.html:70
-#: .\school\templates\layouts\default\page.html:81
+#: .\ratio\settings.py:86 .\school\templates\layouts\default\page.html:71
+#: .\school\templates\layouts\default\page.html:82
 msgid "Italian"
 msgstr "Italiano"
 
@@ -190,30 +203,30 @@ msgstr "Per favore, inserisci un'altra email"
 msgid "You can not use this mail."
 msgstr "Non puoi utilizzare questa email."
 
-#: .\school\templates\layouts\default\page.html:32
+#: .\school\templates\layouts\default\page.html:33
 msgid "Home"
 msgstr "Home"
 
-#: .\school\templates\layouts\default\page.html:46
+#: .\school\templates\layouts\default\page.html:47
 #: .\school\templates\school\profile\change_password.html:8
 msgid "Change password"
 msgstr "Cambia password"
 
-#: .\school\templates\layouts\default\page.html:49
+#: .\school\templates\layouts\default\page.html:50
 #: .\school\templates\school\profile\change_profile.html:8
 msgid "Update profile"
 msgstr "Aggiorna profilo"
 
-#: .\school\templates\layouts\default\page.html:52
+#: .\school\templates\layouts\default\page.html:53
 #: .\school\templates\school\profile\change_email.html:8 .\school\utils.py:36
 msgid "Change email"
 msgstr "Cambia email"
 
-#: .\school\templates\layouts\default\page.html:55
+#: .\school\templates\layouts\default\page.html:56
 msgid "Log out"
 msgstr "Esci"
 
-#: .\school\templates\layouts\default\page.html:59
+#: .\school\templates\layouts\default\page.html:60
 #: .\school\templates\school\log_in.html:8
 #: .\school\templates\school\log_in.html:15
 #: .\school\templates\school\remind_username.html:23
@@ -222,12 +235,12 @@ msgstr "Esci"
 msgid "Log in"
 msgstr "Entra"
 
-#: .\school\templates\layouts\default\page.html:62
+#: .\school\templates\layouts\default\page.html:63
 #: .\school\templates\school\sign_up.html:8
 msgid "Create an account"
 msgstr "Crea un account"
 
-#: .\school\templates\layouts\default\page.html:114
+#: .\school\templates\layouts\default\page.html:115
 msgid "Back to top"
 msgstr "Torna in cima"
 

@@ -83,3 +83,16 @@ def join_competition(request, pk: int = 1):
     contestant.save()
 
     return render(request, "competition/join.html", {'competition': competition})
+
+
+class WatchCompetitionView(generic.DetailView):
+    """Renders the Competition leaderboard page."""
+    context_object_name = "competition"
+    model = Competition
+    template_name = "competition/leaderboard.html"
+
+    def get_context_data(self, **kwargs):
+        """Gets the other context datas."""
+        context = super().get_context_data(**kwargs)
+        context['questions'] = range(context['competition'].how_many_questions())
+        return context

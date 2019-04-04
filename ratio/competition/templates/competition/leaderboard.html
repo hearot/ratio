@@ -1,0 +1,88 @@
+{% extends 'layouts/default/page.html' %}
+
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">{{ competition.title }} - {% trans 'Leaderboard' %}</h1>
+            <p class="card-text">{{ competition.tag }}</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <table class="table table-hover table-condensed">
+                <thead>
+                <tr>
+                    <th>
+                        {% trans 'Rank' %}
+                    </th>
+                    <th>
+                        {% trans 'Name' %}
+                    </th>
+                    {% for question in questions %}
+                        <th>
+                            {{ forloop.counter }}
+                        </th>
+                    {% endfor %}
+                </tr>
+                </thead>
+                <tbody id="leaderboard_body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+{% block custom_scripts %}
+    <script>
+        function leaderboard_api_request() {
+            var xmlhttp = new XMLHttpRequest();
+            var url = "{% url "competition:api_leaderboard" pk=competition.id %}";
+
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    var result = JSON.parse(this.responseText);
+
+                    if (result['ok']) {
+                        leaderboard_parse(result['result']);
+                    }
+                }
+            };
+
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+        }
+
+        function leaderboard_parse(leaderboard) {
+            var out = "";
+            var i = 1;
+
+            for (var key in leaderboard) {
+                if (leaderboard.hasOwnProperty(key)) {
+                    out += "<tr><td>" + i + "</td><td>" + key + "</td>";
+
+                    for (var index = 0; index < leaderboard[key].length; index++) {
+                        out += "<td>" + leaderboard[key][index] + "</td>";
+                    }
+                }
+
+                i++;
+            }
+
+            document.getElementById("leaderboard_body").innerHTML = out;
+        }
+
+        function leaderboard_loop() {
+            setTimeout(function () {
+                leaderboard_api_request();
+                leaderboard_loop();
+            }, 3500);
+        }
+
+        leaderboard_api_request();
+        leaderboard_loop();
+    </script>
+{% endblock %}
