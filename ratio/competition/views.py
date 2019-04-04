@@ -35,11 +35,17 @@ def join_competition(request, pk: int = 1):
                                                              'error_message':
                                                                  _("The competition you want to join doesn't exist!")})
 
-    if competition.has_started():
+    if not competition.can_join_when_started and competition.has_started():
         return render(request, "layouts/default/page.html", {'error': True,
                                                              'error_message':
                                                                  _("The competition you want to "
                                                                    "join has already begun!")})
+
+    if competition.has_ended():
+        return render(request, "layouts/default/page.html", {'error': True,
+                                                             'error_message':
+                                                                 _("The competition you want to "
+                                                                   "join is already over!")})
 
     if not request.user.is_authenticated:
         return render(request, "layouts/default/page.html", {'error': True,

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-03 20:19+0200\n"
+"POT-Creation-Date: 2019-04-04 18:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hearot <gabriel@hearot.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +17,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .\competition\templates\competition\description.html:19
-#: .\competition\templates\competition\list.html:19 .\competition\views.py:47
+#: .\competition\templates\competition\list.html:19 .\competition\views.py:53
 msgid "You must be logged in to join a competition!"
 msgstr "Devi avere effettuato l'accesso per partecipare ad un competizione!"
 
 #: .\competition\templates\competition\description.html:37
 #: .\competition\templates\competition\description.html:41
-#: .\competition\templates\competition\list.html:52
-#: .\competition\templates\competition\list.html:56
+#: .\competition\templates\competition\list.html:53
+#: .\competition\templates\competition\list.html:57
 msgid "Join"
 msgstr "Partecipa"
 
@@ -49,19 +49,27 @@ msgstr ""
 msgid "Watch it!"
 msgstr "Seguila!"
 
-#: .\competition\templates\competition\list.html:61
+#: .\competition\templates\competition\list.html:62
 msgid "Description"
 msgstr "Descrizione"
 
-#: .\competition\templates\competition\list.html:64
+#: .\competition\templates\competition\list.html:66
 msgid "Starts on"
 msgstr "Inizia il"
 
-#: .\competition\templates\competition\list.html:80
+#: .\competition\templates\competition\list.html:68
+msgid "Ended on"
+msgstr "Termina il"
+
+#: .\competition\templates\competition\list.html:70
+msgid "Started on"
+msgstr "Iniziata il"
+
+#: .\competition\templates\competition\list.html:87
 msgid "Next page"
 msgstr "Pagina successiva"
 
-#: .\competition\templates\competition\list.html:85
+#: .\competition\templates\competition\list.html:92
 msgid "Previous page"
 msgstr "Pagina precedente"
 
@@ -71,9 +79,14 @@ msgstr "La competizione a cui vuoi unirti non esiste!"
 
 #: .\competition\views.py:41
 msgid "The competition you want to join has already begun!"
-msgstr "La competizione a cui vuoi unirti è già iniziata!!"
+msgstr "La competizione a cui vuoi unirti è già iniziata!"
 
-#: .\competition\views.py:54
+#: .\competition\views.py:47
+#| msgid "The competition you want to join has already begun!"
+msgid "The competition you want to join is already over!"
+msgstr "La competizione a cui vuoi unirti è già finita!"
+
+#: .\competition\views.py:60
 msgid "You've already joined this competition!"
 msgstr "Ti sei già unito a questa competizione!"
 

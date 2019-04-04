@@ -2,6 +2,7 @@ from typing import Dict, List
 
 import tinymce.models
 from django.contrib.auth.models import User
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.utils import timezone
 
@@ -32,6 +33,10 @@ class Answer(models.Model):
 class Competition(models.Model):
     """Represents a Competition where Contestants have
     to give Answers about some Questions."""
+
+    can_join_when_started = models.BooleanField(default=False)
+    """If an User can join the Competition even if
+    this has already begun."""
 
     description = tinymce.models.HTMLField()
     """The Question text - the description"""
@@ -84,10 +89,10 @@ class Contestant(models.Model):
     """Represents an User that has joined the Competition."""
 
     competition = models.ForeignKey('Competition', on_delete=models.CASCADE)
-    """The associated Competition."""
+    """The associated Competition"""
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    """The associated user."""
+    """The associated user"""
 
     unique_together = ("competition", "user")
 
@@ -133,13 +138,20 @@ class Question(models.Model):
     competition = models.ForeignKey('Competition', blank=False, on_delete=models.CASCADE)
     """To which Competition the Question is associated"""
 
+    delta = models.IntegerField(default=-5, validators=[MaxValueValidator(0)])
+    """How many points are subtracted to the `points` attribute
+    when a correct answer is given"""
+
     description = tinymce.models.HTMLField()
     """The Question text - the description"""
 
     explanation = tinymce.models.HTMLField()
     """The explanation of the solution"""
 
-    point = models.IntegerField(default=100)
+    minimum = models.IntegerField(default=65, validators=[MinValueValidator(1)])
+    """The minimum points you can get if the answer is correct"""
+
+    point = models.IntegerField(default=100, validators=[MinValueValidator(1)])
     """How many points are given if the answer is correct"""
 
     right_answer = models.CharField(max_length=25)
@@ -149,6 +161,10 @@ class Question(models.Model):
     """The title of the question"""
 
     unique_together = ("title", "competition")
+
+    wrong = models.IntegerField(default=-10, validators=[MaxValueValidator(0)])
+    """How many points are given if the answer
+    is wrong (must be negative"""
 
     def __str__(self) -> str:
         """Returns a representation of the object."""
