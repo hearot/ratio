@@ -28,24 +28,26 @@
                 <h1 class="jumbotron-heading">{{ competition.title }}</h1>
                 <p class="card-text">{{ competition.tag }}</p>
 
-                {% if competition.has_started %}
-                    <a href="{% url "competition:watch_competition" pk=competition.id %}">
-                        <button type="button"
-                                class="btn btn-sm btn-outline-danger mr-1">{% trans 'Watch it!' %}</button>
-                    </a>
-                {% endif %}
-
-                {% if competition.can_join_when_started and not competition.has_ended %}
-                    {% if request.user.is_authenticated %}
-                        <a href="{% url "competition:join_competition" pk=competition.id %}">
+                <div class="btn-group">
+                    {% if competition.has_started %}
+                        <a href="{% url "competition:watch_competition" pk=competition.id %}">
                             <button type="button"
-                                    class="btn btn-sm btn-outline-primary mr-1">{% trans 'Join' %}</button>
+                                    class="btn btn-sm btn-outline-danger mr-1">{% trans 'Watch it!' %}</button>
                         </a>
-                    {% else %}
-                        <button type="button" class="btn btn-sm btn-outline-primary mr-1"
-                                onclick="$('.toast').toast('show')">{% trans 'Join' %}</button>
                     {% endif %}
-                {% endif %}
+
+                    {% if competition.can_join_when_started and not competition.has_ended %}
+                        {% if request.user.is_authenticated %}
+                            <a href="{% url "competition:join_competition" pk=competition.id %}">
+                                <button type="button"
+                                        class="btn btn-sm btn-outline-primary mr-1">{% trans 'Join' %}</button>
+                            </a>
+                        {% else %}
+                            <button type="button" class="btn btn-sm btn-outline-primary mr-1"
+                                    onclick="$('.toast').toast('show')">{% trans 'Join' %}</button>
+                        {% endif %}
+                    {% endif %}
+                </div>
             </div>
         </section>
 
