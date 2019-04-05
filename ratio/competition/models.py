@@ -14,6 +14,9 @@ class Answer(models.Model):
     contestant = models.ForeignKey('Contestant', on_delete=models.CASCADE)
     """The Contestant who has given the answer"""
 
+    given_answer = models.CharField(max_length=25)
+    """The answer given by the Contestant."""
+
     point = models.IntegerField()
     """How many points have been added/subtracted."""
 
@@ -92,6 +95,14 @@ class Competition(models.Model):
         """Returns the length of the Questions
         list."""
         return len(self.get_questions())
+
+    def is_contestant(self, user: User) -> bool:
+        """Returns if the passed User has
+        joined the Competition."""
+        try:
+            return Contestant.objects.get(competition=self, user=user) in self.get_contestants()
+        except Exception:
+            return False
 
 
 class Contestant(models.Model):

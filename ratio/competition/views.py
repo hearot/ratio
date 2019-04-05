@@ -5,10 +5,11 @@ from django.shortcuts import render
 from django.utils.translation import gettext_lazy as _
 from django.views import generic
 
+from .forms import GiveAnswer
 from .models import Competition, Contestant, User
 
 
-def api_leaderboard(request, pk: int = 1):
+def api_leaderboard(request, pk: int):
     """Returns a JSON containing all the information
     about the Competition, including points & Contestants."""
     try:
@@ -25,6 +26,33 @@ def api_leaderboard(request, pk: int = 1):
         return JsonResponse({'ok': False, 'code': 500,
                              'error_message': _("An error occured."),
                              'result': {}})
+
+
+def answer(request, pk: int):
+    """Returns the Answer questions page and
+    validate answers."""
+    try:
+        competition = Competition.objects.get(id=pk)
+    except ObjectDoesNotExist:
+        return render(request, "layouts/default/page.html", {'error': True,
+                                                             'error_message':
+                                                                 _("The competition you want to play doesn't exist!")})
+
+    if not request.user.is_authenticated:
+        return render(request, "layouts/default/page.html", {'error': True,
+                                                             'error_message':
+                                                                 _("You must be logged in to play a competition!")})
+
+    user = User.objects.get(username=request.user.username)
+
+    try:
+        contestant = Contestant.objects.get(competition=competition, user=user)
+    except ObjectDoesNotExist:
+        return render(request, "layouts/default/page.html", {'error': True,
+                                                             'error_message':
+                                                                 _("You haven't joined that competition!")})
+
+    return render(request, "competition/answer.html", {'contestant': contestant, 'form': GiveAnswer})
 
 
 class CompetitionView(generic.DetailView):
@@ -46,7 +74,7 @@ def competitions(request, page: int = 1):
     return render(request, "competition/list.html", {'competitions': races})
 
 
-def join_competition(request, pk: int = 1):
+def join_competition(request, pk: int):
     """Renders the Join the Competition page."""
     try:
         competition = Competition.objects.get(id=pk)
@@ -94,5 +122,12 @@ class WatchCompetitionView(generic.DetailView):
     def get_context_data(self, **kwargs):
         """Gets the other context datas."""
         context = super().get_context_data(**kwargs)
+
+        try:
+            context['has_joined'] = context['competition'].is_contestant(
+                User.objects.get(username=self.request.user.username))
+        except Exception:
+            context['has_joined'] = False
+
         context['questions'] = range(context['competition'].how_many_questions())
         return context
