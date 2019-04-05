@@ -3,9 +3,10 @@
 {% load bootstrap4 %}
 {% load i18n %}
 
+{% block title %}{% trans 'Description' %} - {{ competition.title }} | Ratio{% endblock %}
+
 {% block content %}
     <main role="main">
-
         <div class="position-absolute w-100 p-4 d-flex flex-column align-items-end">
             <div class="w-25">
                 <div class="toast ml-auto" role="alert" data-delay="2500" data-autohide="true">
@@ -26,27 +27,28 @@
             <div class="container">
                 <h1 class="jumbotron-heading">{{ competition.title }}</h1>
                 <p class="card-text">{{ competition.tag }}</p>
+
+                {% if competition.has_started %}
+                    <a href="{% url "competition:watch_competition" pk=competition.id %}">
+                        <button type="button"
+                                class="btn btn-sm btn-outline-danger mr-1">{% trans 'Watch it!' %}</button>
+                    </a>
+                {% endif %}
+
+                {% if competition.can_join_when_started and not competition.has_ended %}
+                    {% if request.user.is_authenticated %}
+                        <a href="{% url "competition:join_competition" pk=competition.id %}">
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-primary mr-1">{% trans 'Join' %}</button>
+                        </a>
+                    {% else %}
+                        <button type="button" class="btn btn-sm btn-outline-primary mr-1"
+                                onclick="$('.toast').toast('show')">{% trans 'Join' %}</button>
+                    {% endif %}
+                {% endif %}
             </div>
         </section>
 
         {{ competition.description|safe }}
-
-        {% if competition.has_started %}
-            <a href="{% url "competition:watch_competition" pk=competition.id %}">
-                <button type="button"
-                        class="btn btn-sm btn-outline-danger mr-1">{% trans 'Watch it!' %}</button>
-            </a>
-        {% endif %}
-
-        {% if request.user.is_authenticated %}
-            <a href="{% url "competition:join_competition" pk=competition.id %}">
-                <button type="button"
-                        class="btn btn-sm btn-outline-primary">{% trans 'Join' %}</button>
-            </a>
-        {% else %}
-            <button type="button" class="btn btn-sm btn-outline-primary"
-                    onclick="$('.toast').toast('show')">{% trans 'Join' %}</button>
-        {% endif %}
-
     </main>
 {% endblock %}

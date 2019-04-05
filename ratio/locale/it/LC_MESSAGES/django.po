@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-04 20:00+0200\n"
+"POT-Creation-Date: 2019-04-05 16:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hearot <gabriel@hearot.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,45 +16,58 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\competition\templates\competition\description.html:19
-#: .\competition\templates\competition\list.html:19 .\competition\views.py:73
+#: .\competition\templates\competition\description.html:6
+#: .\competition\templates\competition\list.html:64
+msgid "Description"
+msgstr "Descrizione"
+
+#: .\competition\templates\competition\description.html:21
+#: .\competition\templates\competition\list.html:21 .\competition\views.py:73
 msgid "You must be logged in to join a competition!"
 msgstr "Devi avere effettuato l'accesso per partecipare ad un competizione!"
 
-#: .\competition\templates\competition\description.html:37
-#: .\competition\templates\competition\list.html:46
+#: .\competition\templates\competition\description.html:39
+#: .\competition\templates\competition\list.html:48
 msgid "Watch it!"
 msgstr "Seguila!"
 
-#: .\competition\templates\competition\description.html:44
-#: .\competition\templates\competition\description.html:48
-#: .\competition\templates\competition\list.html:53
-#: .\competition\templates\competition\list.html:57
+#: .\competition\templates\competition\description.html:46
+#: .\competition\templates\competition\description.html:50
+#: .\competition\templates\competition\list.html:55
+#: .\competition\templates\competition\list.html:59
 msgid "Join"
 msgstr "Partecipa"
 
-#: .\competition\templates\competition\join.html:9
+#: .\competition\templates\competition\join.html:6
+#, fuzzy
+#| msgid "Email successfully changed."
+msgid "Joined successfully"
+msgstr "Email cambiata con successo."
+
+#: .\competition\templates\competition\join.html:11
 msgid "You successfully joined the competition!"
 msgstr "Ti sei registrato con successo!"
 
-#: .\competition\templates\competition\leaderboard.html:9
+#: .\competition\templates\competition\leaderboard.html:6
+#: .\competition\templates\competition\leaderboard.html:11
 msgid "Leaderboard"
 msgstr "Classifica"
 
-#: .\competition\templates\competition\leaderboard.html:20
+#: .\competition\templates\competition\leaderboard.html:22
 msgid "Rank"
 msgstr "Posizione"
 
-#: .\competition\templates\competition\leaderboard.html:23
+#: .\competition\templates\competition\leaderboard.html:25
 msgid "Name"
 msgstr "Nome"
 
-#: .\competition\templates\competition\list.html:27
-#: .\school\templates\layouts\default\page.html:42
+#: .\competition\templates\competition\list.html:6
+#: .\competition\templates\competition\list.html:29
+#: .\school\templates\layouts\default\page.html:41
 msgid "Competitions"
 msgstr "Competizioni"
 
-#: .\competition\templates\competition\list.html:28
+#: .\competition\templates\competition\list.html:30
 msgid ""
 "Fight other mathematicians & let them know who is the coolest mathematician "
 "in the the world."
@@ -62,27 +75,23 @@ msgstr ""
 "Combatti con altri appassionati di matematica e fai capire a loro chi è il "
 "matematico più figo del mondo."
 
-#: .\competition\templates\competition\list.html:62
-msgid "Description"
-msgstr "Descrizione"
-
-#: .\competition\templates\competition\list.html:66
+#: .\competition\templates\competition\list.html:68
 msgid "Starts on"
 msgstr "Inizia il"
 
-#: .\competition\templates\competition\list.html:68
+#: .\competition\templates\competition\list.html:70
 msgid "Ended on"
 msgstr "Termina il"
 
-#: .\competition\templates\competition\list.html:70
+#: .\competition\templates\competition\list.html:72
 msgid "Started on"
 msgstr "Iniziata il"
 
-#: .\competition\templates\competition\list.html:87
+#: .\competition\templates\competition\list.html:89
 msgid "Next page"
 msgstr "Pagina successiva"
 
-#: .\competition\templates\competition\list.html:92
+#: .\competition\templates\competition\list.html:94
 msgid "Previous page"
 msgstr "Pagina precedente"
 
@@ -90,7 +99,7 @@ msgstr "Pagina precedente"
 msgid "The Competition you want to watch doesn't exist!"
 msgstr "La competizione che vuoi seguire non esiste!"
 
-#: .\competition\views.py:26 .\school\templates\layouts\default\page.html:98
+#: .\competition\views.py:26 .\school\templates\layouts\default\page.html:97
 msgid "An error occured."
 msgstr "Si è verificato un errore."
 
@@ -110,13 +119,13 @@ msgstr "La competizione a cui vuoi unirti è già finita!"
 msgid "You've already joined this competition!"
 msgstr "Ti sei già unito a questa competizione!"
 
-#: .\ratio\settings.py:85 .\school\templates\layouts\default\page.html:74
-#: .\school\templates\layouts\default\page.html:79
+#: .\ratio\settings.py:85 .\school\templates\layouts\default\page.html:73
+#: .\school\templates\layouts\default\page.html:78
 msgid "English"
 msgstr "Inglese"
 
-#: .\ratio\settings.py:86 .\school\templates\layouts\default\page.html:71
-#: .\school\templates\layouts\default\page.html:82
+#: .\ratio\settings.py:86 .\school\templates\layouts\default\page.html:70
+#: .\school\templates\layouts\default\page.html:81
 msgid "Italian"
 msgstr "Italiano"
 
@@ -203,44 +212,47 @@ msgstr "Per favore, inserisci un'altra email"
 msgid "You can not use this mail."
 msgstr "Non puoi utilizzare questa email."
 
-#: .\school\templates\layouts\default\page.html:33
+#: .\school\templates\layouts\default\page.html:32
 msgid "Home"
 msgstr "Home"
 
-#: .\school\templates\layouts\default\page.html:47
-#: .\school\templates\school\profile\change_password.html:8
+#: .\school\templates\layouts\default\page.html:46
+#: .\school\templates\school\profile\change_password.html:6
+#: .\school\templates\school\profile\change_password.html:10
 msgid "Change password"
 msgstr "Cambia password"
 
-#: .\school\templates\layouts\default\page.html:50
-#: .\school\templates\school\profile\change_profile.html:8
+#: .\school\templates\layouts\default\page.html:49
+#: .\school\templates\school\profile\change_profile.html:10
 msgid "Update profile"
 msgstr "Aggiorna profilo"
 
-#: .\school\templates\layouts\default\page.html:53
-#: .\school\templates\school\profile\change_email.html:8 .\school\utils.py:36
+#: .\school\templates\layouts\default\page.html:52
+#: .\school\templates\school\profile\change_email.html:6
+#: .\school\templates\school\profile\change_email.html:10 .\school\utils.py:36
 msgid "Change email"
 msgstr "Cambia email"
 
-#: .\school\templates\layouts\default\page.html:56
+#: .\school\templates\layouts\default\page.html:55
 msgid "Log out"
 msgstr "Esci"
 
-#: .\school\templates\layouts\default\page.html:60
-#: .\school\templates\school\log_in.html:8
-#: .\school\templates\school\log_in.html:15
-#: .\school\templates\school\remind_username.html:23
-#: .\school\templates\school\resend_activation_code.html:23
-#: .\school\templates\school\restore_password.html:23
+#: .\school\templates\layouts\default\page.html:59
+#: .\school\templates\school\log_in.html:6
+#: .\school\templates\school\log_in.html:10
+#: .\school\templates\school\log_in.html:17
+#: .\school\templates\school\remind_username.html:25
+#: .\school\templates\school\resend_activation_code.html:25
+#: .\school\templates\school\restore_password.html:25
 msgid "Log in"
 msgstr "Entra"
 
-#: .\school\templates\layouts\default\page.html:63
-#: .\school\templates\school\sign_up.html:8
+#: .\school\templates\layouts\default\page.html:62
+#: .\school\templates\school\sign_up.html:10
 msgid "Create an account"
 msgstr "Crea un account"
 
-#: .\school\templates\layouts\default\page.html:115
+#: .\school\templates\layouts\default\page.html:114
 msgid "Back to top"
 msgstr "Torna in cima"
 
@@ -274,55 +286,77 @@ msgstr ""
 msgid "Please, go to the following page and choose a new password:"
 msgstr "Per favore, vai alla seguente pagina e scegli una nuova password:"
 
-#: .\school\templates\school\log_in.html:23
+#: .\school\templates\school\log_in.html:25
 msgid "Forgot your password?"
 msgstr "Hai dimenticato la password?"
 
-#: .\school\templates\school\log_in.html:26
+#: .\school\templates\school\log_in.html:28
 msgid "Forgot your username?"
 msgstr "Hai dimenticato il tuo nome utente?"
 
-#: .\school\templates\school\log_in.html:29
-#: .\school\templates\school\resend_activation_code.html:8
+#: .\school\templates\school\log_in.html:31
+#: .\school\templates\school\resend_activation_code.html:10
 msgid "Resend an activation code"
 msgstr "Re-invia un codice d'attivazione"
 
-#: .\school\templates\school\log_out.html:7
+#: .\school\templates\school\log_out.html:5
+msgid "Successfully logged out!"
+msgstr "Sei uscito con successo!"
+
+#: .\school\templates\school\log_out.html:9
 msgid "Logged out"
 msgstr "Uscito"
 
-#: .\school\templates\school\log_out.html:10
+#: .\school\templates\school\log_out.html:12
 msgid "Thanks for spending some quality time with the site today."
 msgstr "Ti ringraziamo della tua attività su questo sito oggi."
 
-#: .\school\templates\school\log_out.html:14
+#: .\school\templates\school\log_out.html:16
 msgid "Log in again"
 msgstr "Entra di nuovo"
 
-#: .\school\templates\school\profile\change_email.html:15
-#: .\school\templates\school\profile\change_password.html:15
-#: .\school\templates\school\profile\change_profile.html:15
-#: .\school\templates\school\restore_password_confirm.html:21
+#: .\school\templates\school\profile\change_email.html:6
+#: .\school\templates\school\profile\change_password.html:6
+#: .\school\templates\school\profile\change_profile.html:6
+msgid "Profile"
+msgstr "Profilo"
+
+#: .\school\templates\school\profile\change_email.html:17
+#: .\school\templates\school\profile\change_password.html:17
+#: .\school\templates\school\profile\change_profile.html:17
+#: .\school\templates\school\restore_password_confirm.html:23
 msgid "Change"
 msgstr "Cambia"
 
-#: .\school\templates\school\remind_username.html:8
+#: .\school\templates\school\profile\change_profile.html:6
+msgid "Update email"
+msgstr "Aggiorna l'email"
+
+#: .\school\templates\school\remind_username.html:6
+#: .\school\templates\school\remind_username.html:10
 msgid "Remind a username"
 msgstr "Ricorda il nome utente"
 
-#: .\school\templates\school\remind_username.html:15
-#: .\school\templates\school\resend_activation_code.html:15
-#: .\school\templates\school\restore_password.html:15
+#: .\school\templates\school\remind_username.html:17
+#: .\school\templates\school\resend_activation_code.html:17
+#: .\school\templates\school\restore_password.html:17
 msgid "Next"
 msgstr "Prossima"
 
-#: .\school\templates\school\restore_password.html:8
-#: .\school\templates\school\restore_password_confirm.html:8
-#: .\school\templates\school\restore_password_done.html:7 .\school\utils.py:47
+#: .\school\templates\school\resend_activation_code.html:6
+msgid "Activation code"
+msgstr "Codice d'attivazione"
+
+#: .\school\templates\school\restore_password.html:6
+#: .\school\templates\school\restore_password.html:10
+#: .\school\templates\school\restore_password_confirm.html:6
+#: .\school\templates\school\restore_password_confirm.html:10
+#: .\school\templates\school\restore_password_done.html:5
+#: .\school\templates\school\restore_password_done.html:9 .\school\utils.py:47
 msgid "Restore password"
 msgstr "Ristabilisci la password"
 
-#: .\school\templates\school\restore_password_confirm.html:13
+#: .\school\templates\school\restore_password_confirm.html:15
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
@@ -330,7 +364,7 @@ msgstr ""
 "Per favore, inserisci la tua nuova password due volte così che possiamo "
 "verificare che tu l'abbia scritta correttamente."
 
-#: .\school\templates\school\restore_password_confirm.html:28
+#: .\school\templates\school\restore_password_confirm.html:30
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used. Please request a new password reset."
@@ -338,7 +372,7 @@ msgstr ""
 "Il link per reimpostare la password non è valido, è possibile che sia già "
 "stato utilizzato. Per favore, richiedi di reimpostare la password nuovamente."
 
-#: .\school\templates\school\restore_password_done.html:10
+#: .\school\templates\school\restore_password_done.html:12
 msgid ""
 "We've emailed you instructions for setting your password, if an account "
 "exists with the email you entered."
@@ -346,11 +380,11 @@ msgstr ""
 "Ti abbiamo mandato per email le istruzioni per impostare la tua password, se "
 "un account con l'email che hai inserito esiste."
 
-#: .\school\templates\school\restore_password_done.html:11
+#: .\school\templates\school\restore_password_done.html:13
 msgid "You should receive them shortly."
 msgstr "Dovresti riceverle a breve."
 
-#: .\school\templates\school\restore_password_done.html:15
+#: .\school\templates\school\restore_password_done.html:17
 msgid ""
 "If you don't receive an email, please make sure you've entered the address "
 "you signed up with, and check your spam folder."
@@ -358,7 +392,11 @@ msgstr ""
 "Se non ricevi alcuna email, per favore controlla se hai inserito l'indirizzo "
 "email con cui ti sei registrato e se l'email è presente nella cartella spam."
 
-#: .\school\templates\school\sign_up.html:15
+#: .\school\templates\school\sign_up.html:6
+msgid "Sign up"
+msgstr "Registrati"
+
+#: .\school\templates\school\sign_up.html:17
 msgid "Create"
 msgstr "Crea"
 
