@@ -25,7 +25,7 @@ You may want to create your own profile, use your own email, watch competitions,
  
 ## How to contribute
 
-This project is maintained by @hearot, but you might want to join him anyway. You may read [our contributing guide](CONTRIBUTING.md) in order to contribute to this project. Thank you.
+This project is maintained by [hearot](https://github.com/hearot), but you might want to join him anyway. You may read [our contributing guide](CONTRIBUTING.md) in order to contribute to this project. Thank you.
 
 ## License
 

@@ -110,10 +110,16 @@
     {% endif %}
 
     {% block content %}
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mauris risus, molestie a nunc eget, porttitor
-        iaculis augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at dictum nunc, sed rutrum erat.
-        Nulla facilisi. Aenean molestie lacus blandit lorem facilisis euismod. Praesent lobortis augue non pellentesque
-        efficitur. Maecenas sed mi blandit, porta magna ac, semper metus. Etiam at magna ut nibh interdum rutrum.
+        <main role="main">
+            <section class="jumbotron text-center">
+                <div class="container">
+                    <h1 class="jumbotron-heading">Ratio<img alt="Logo" width="50" height="50" src="{% static 'logo.png' %}"/></h1>
+                    <p class="card-text"><i>Quisque faber fortunae suae.</i></p>
+                </div>
+            </section>
+
+            {% trans 'Ratio (from Latin, ratio, -onis, "intelligence, sum, etc...") is the platform where you can find other mathematicians and fight them.' %}
+        </main>
     {% endblock %}
 </div>
 
