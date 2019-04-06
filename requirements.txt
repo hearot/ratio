@@ -4,4 +4,3 @@ django-cookie-law
 django-environ
 django_hreflang
 django-tinymce
-pre-commit

@@ -121,6 +121,8 @@ SITE_ID = 1
 
 SIGN_UP_FIELDS = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
 
+STATIC_ROOT = env.str('STATIC_ROOT')
+
 STATIC_URL = '/static/'
 
 STATICFILES_FINDERS = (

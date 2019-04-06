@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-06 18:24+0200\n"
+"POT-Creation-Date: 2019-04-06 22:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hearot <gabriel@hearot.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -172,12 +172,12 @@ msgstr "La competizione a cui vuoi unirti è già finita!"
 msgid "You've already joined this competition!"
 msgstr "Ti sei già unito a questa competizione!"
 
-#: .\ratio\settings.py:88 .\school\templates\layouts\default\page.html:73
+#: .\ratio\settings.py:86 .\school\templates\layouts\default\page.html:73
 #: .\school\templates\layouts\default\page.html:78
 msgid "English"
 msgstr "Inglese"
 
-#: .\ratio\settings.py:89 .\school\templates\layouts\default\page.html:70
+#: .\ratio\settings.py:87 .\school\templates\layouts\default\page.html:70
 #: .\school\templates\layouts\default\page.html:81
 msgid "Italian"
 msgstr "Italiano"
@@ -274,7 +274,7 @@ msgid "W-we're going to fix it..."
 msgstr "L-lo sistemeremo..."
 
 #: .\school\templates\layouts\default\404.html:42
-#: .\school\templates\layouts\default\page.html:124
+#: .\school\templates\layouts\default\page.html:130
 msgid "Back to top"
 msgstr "Torna in cima"
 
@@ -317,6 +317,14 @@ msgstr "Entra"
 #: .\school\templates\school\sign_up.html:10
 msgid "Create an account"
 msgstr "Crea un account"
+
+#: .\school\templates\layouts\default\page.html:121
+msgid ""
+"Ratio (from Latin, ratio, -onis, \"intelligence, sum, etc...\") is the "
+"platform where you can find other mathematicians and fight them."
+msgstr ""
+"Ratio (dal Latino, ratio, -onis, \"intelligenza, somma, etc...\") è la "
+"piattaforma nella quale puoi trovare altre matematici e competere con loro."
 
 #: .\school\templates\school\emails\activate_profile.html:15
 #: .\school\templates\school\emails\activate_profile.txt:3
