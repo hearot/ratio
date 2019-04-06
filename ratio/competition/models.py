@@ -30,7 +30,8 @@ class Answer(models.Model):
 
     def __str__(self) -> str:
         """Returns a representation of the object."""
-        return str("%s (±%s)" % (self.question, self.point))
+        return str("%s (%s) - %s | %s" % (self.question, self.point,
+                                          self.contestant, self.contestant.competition))
 
 
 class Competition(models.Model):
@@ -138,17 +139,11 @@ class Contestant(models.Model):
 
     def get_question_points(self, question: 'Question') -> int:
         """Returns all the points got from a Question."""
-        try:
-            return sum(*[answer.point for answer in self.get_answer_by_question(question)])
-        except TypeError:
-            return 0
+        return sum([answer.point for answer in self.get_answer_by_question(question)])
 
     def get_total_points(self) -> int:
         """Returns the total points."""
-        try:
-            return sum(*self.get_list_points())
-        except TypeError:
-            return 0
+        return sum(self.get_list_points())
 
 
 class Question(models.Model):

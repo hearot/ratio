@@ -6,7 +6,7 @@ from django.utils.translation import gettext_lazy as _
 from django.views import generic
 
 from .forms import GiveAnswer
-from .models import Competition, Contestant, User
+from .models import Answer, Competition, Contestant, User
 
 
 def api_leaderboard(request, pk: int):
@@ -51,6 +51,61 @@ def answer(request, pk: int):
         return render(request, "layouts/default/page.html", {'error': True,
                                                              'error_message':
                                                                  _("You haven't joined that competition!")})
+
+    if request.method == 'POST':
+        form = GiveAnswer(request.POST)
+
+        if not competition.has_started():
+            return render(request, "competition/answer.html", {'contestant': contestant,
+                                                               'error': True,
+                                                               'error_message':
+                                                                   _("The competition hasn't begun yet."),
+                                                               'form': GiveAnswer})
+
+        if competition.has_ended():
+            return render(request, "competition/answer.html", {'contestant': contestant,
+                                                               'error': True,
+                                                               'error_message':
+                                                                   _("The competition is already over."),
+                                                               'form': GiveAnswer})
+
+        if form.is_valid():
+            try:
+                question = competition.get_questions()[form.cleaned_data['question'] - 1]
+            except Exception:
+                return render(request, "competition/answer.html", {'contestant': contestant,
+                                                                   'error': True,
+                                                                   'error_message':
+                                                                       _("The question number is not valid."),
+                                                                   'form': GiveAnswer})
+
+            right = form.cleaned_data['answer'].lower() == question.right_answer.lower()
+
+            if Answer.objects.filter(contestant=contestant, question=question, right=True).exists():
+                return render(request, "competition/answer.html", {'contestant': contestant,
+                                                                   'error': True,
+                                                                   'error_message':
+                                                                       _("You've already answered to this question."),
+                                                                   'form': GiveAnswer})
+
+            if Answer.objects.filter(contestant=contestant, question=question,
+                                     given_answer=form.cleaned_data['answer']).exists():
+                return render(request, "competition/answer.html", {'contestant': contestant,
+                                                                   'error': True,
+                                                                   'error_message':
+                                                                       _("You've already given this answer."),
+                                                                   'form': GiveAnswer})
+
+            Answer(contestant=contestant, given_answer=form.cleaned_data['answer'],
+                   question=question, point=question.point if right else question.wrong,
+                   right=right).save()
+
+            if right and (question.point + question.delta) >= question.minimum:
+                question.point = question.point + question.delta
+                question.save()
+
+            return render(request, "competition/answer.html", {'contestant': contestant, 'form': GiveAnswer,
+                                                               'success': _("The answer has been added!")})
 
     return render(request, "competition/answer.html", {'contestant': contestant, 'form': GiveAnswer})
 
@@ -107,8 +162,7 @@ def join_competition(request, pk: int):
                                                              'error_message':
                                                                  _("You've already joined this competition!")})
 
-    contestant = Contestant(competition=competition, user=user)
-    contestant.save()
+    Contestant(competition=competition, user=user).save()
 
     return render(request, "competition/join.html", {'competition': competition})
 

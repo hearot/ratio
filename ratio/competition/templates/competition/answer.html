@@ -8,7 +8,7 @@
 {% block content %}
     <h4>{% trans 'Answer' %} - {{ contestant.competition.title }}</h4>
 
-    <form method="post" action="/give-answer/{{ contestant.competition.id }}" target="_self">
+    <form method="post">
         {% csrf_token %}
         {% bootstrap_form form %}
 

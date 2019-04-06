@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-05 20:39+0200\n"
+"POT-Creation-Date: 2019-04-06 15:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hearot <gabriel@hearot.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,7 +39,7 @@ msgstr "Descrizione"
 
 #: .\competition\templates\competition\description.html:20
 #: .\competition\templates\competition\leaderboard.html:19
-#: .\competition\templates\competition\list.html:20 .\competition\views.py:101
+#: .\competition\templates\competition\list.html:20 .\competition\views.py:156
 msgid "You must be logged in to join a competition!"
 msgstr "Devi avere effettuato l'accesso per partecipare ad una competizione!"
 
@@ -116,7 +116,7 @@ msgstr "Pagina precedente"
 msgid "The Competition you want to watch doesn't exist!"
 msgstr "La competizione che vuoi seguire non esiste!"
 
-#: .\competition\views.py:27 .\school\templates\layouts\default\page.html:97
+#: .\competition\views.py:27 .\school\templates\layouts\default\page.html:103
 msgid "An error occured."
 msgstr "Si è verificato un errore."
 
@@ -132,19 +132,43 @@ msgstr "Devi avere effettuato l'accesso per competere in una competizione!"
 msgid "You haven't joined that competition!"
 msgstr "Non ti sei iscritto a questa competizione!"
 
-#: .\competition\views.py:84
+#: .\competition\views.py:62
+msgid "The competition hasn't begun yet."
+msgstr "La competizione non è ancora iniziata."
+
+#: .\competition\views.py:69
+msgid "The competition is already over."
+msgstr "La competizione è già terminata."
+
+#: .\competition\views.py:79
+msgid "The question number is not valid."
+msgstr "Il numero della domanda non è valido."
+
+#: .\competition\views.py:88
+msgid "You've already answered to this question."
+msgstr "Hai già risposto a questa domanda."
+
+#: .\competition\views.py:96
+msgid "You've already given this answer."
+msgstr "Hai già dato questa risposta."
+
+#: .\competition\views.py:108
+msgid "The answer has been added!"
+msgstr "La risposta è stata aggiunta!"
+
+#: .\competition\views.py:139
 msgid "The competition you want to join doesn't exist!"
 msgstr "La competizione a cui vuoi unirti non esiste!"
 
-#: .\competition\views.py:89
+#: .\competition\views.py:144
 msgid "The competition you want to join has already begun!"
 msgstr "La competizione a cui vuoi unirti è già iniziata!"
 
-#: .\competition\views.py:95
+#: .\competition\views.py:150
 msgid "The competition you want to join is already over!"
 msgstr "La competizione a cui vuoi unirti è già finita!"
 
-#: .\competition\views.py:108
+#: .\competition\views.py:163
 msgid "You've already joined this competition!"
 msgstr "Ti sei già unito a questa competizione!"
 
@@ -281,7 +305,7 @@ msgstr "Entra"
 msgid "Create an account"
 msgstr "Crea un account"
 
-#: .\school\templates\layouts\default\page.html:114
+#: .\school\templates\layouts\default\page.html:120
 msgid "Back to top"
 msgstr "Torna in cima"
 
