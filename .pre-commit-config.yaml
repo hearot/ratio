@@ -1,0 +1,12 @@
+hooks:
+  - id: django-test
+    name: Django tester
+    description: Test all the Ratio platform using the Django tester.
+    entry: ratio/manage.py
+    language: python
+    types: [text]
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v1.2.3
+    hooks:
+      - id: flake8
