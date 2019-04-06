@@ -13,7 +13,12 @@
 **Ratio** (from Latin, *ratio, -onis*, "intelligence, sum, etc...") is the platform where you can find other mathematicians and *fight* them.
 
 #### Summary
+ * [How to contribute](#how-to-contribute)
  * [License](#license)
+ 
+## How to contribute
+
+You may read [our contributing guide](CONTRIBUTING.md) in order to contribute to this project. Thank you, anyway.
 
 ## License
 
