@@ -80,7 +80,7 @@ INSTALLED_APPS = [
     'tinymce'
 ]
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = env.str("LANGUAGE_CODE")
 
 LANGUAGES = (
     ('en', _('English')),

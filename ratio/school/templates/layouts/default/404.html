@@ -1,0 +1,53 @@
+{% load staticfiles %}
+{% load bootstrap4 %}
+{% load cookielaw_tags %}
+{% load hreflang %}
+{% load i18n %}
+
+{% get_current_language as language_code %}
+
+<!DOCTYPE html>
+<html lang="{{ language_code }}">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Quisque faber fortunae suae.">
+    <meta name="author" content="Hearot">
+
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+
+    <title>{% block title %}Ratio{% endblock %}</title>
+
+    <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">{{ error_message }}</h1>
+        <p class="card-text">{% trans "W-we're going to fix it..." %}</p>
+    </div>
+</section>
+
+<hr>
+<footer class="text-muted">
+    <div class="container">
+        <p class="float-right">
+            <a href="#">{% trans 'Back to top' %}</a>
+        </p>
+        <p>&copy; {% now 'Y' %} <a href="https://github.com/hearot">Hearot</a></p>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

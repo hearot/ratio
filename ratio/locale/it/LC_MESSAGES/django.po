@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-06 15:38+0200\n"
+"POT-Creation-Date: 2019-04-06 18:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hearot <gabriel@hearot.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -116,7 +116,7 @@ msgstr "Pagina precedente"
 msgid "The Competition you want to watch doesn't exist!"
 msgstr "La competizione che vuoi seguire non esiste!"
 
-#: .\competition\views.py:27 .\school\templates\layouts\default\page.html:103
+#: .\competition\views.py:27 .\school\templates\layouts\default\page.html:107
 msgid "An error occured."
 msgstr "Si è verificato un errore."
 
@@ -172,15 +172,19 @@ msgstr "La competizione a cui vuoi unirti è già finita!"
 msgid "You've already joined this competition!"
 msgstr "Ti sei già unito a questa competizione!"
 
-#: .\ratio\settings.py:85 .\school\templates\layouts\default\page.html:73
+#: .\ratio\settings.py:88 .\school\templates\layouts\default\page.html:73
 #: .\school\templates\layouts\default\page.html:78
 msgid "English"
 msgstr "Inglese"
 
-#: .\ratio\settings.py:86 .\school\templates\layouts\default\page.html:70
+#: .\ratio\settings.py:89 .\school\templates\layouts\default\page.html:70
 #: .\school\templates\layouts\default\page.html:81
 msgid "Italian"
 msgstr "Italiano"
+
+#: .\ratio\urls.py:16
+msgid "404: Page not found!"
+msgstr "404: Pagina non trovata!"
 
 #: .\school\forms.py:18
 msgid "Password"
@@ -265,6 +269,15 @@ msgstr "Per favore, inserisci un'altra email"
 msgid "You can not use this mail."
 msgstr "Non puoi utilizzare questa email."
 
+#: .\school\templates\layouts\default\404.html:34
+msgid "W-we're going to fix it..."
+msgstr "L-lo sistemeremo..."
+
+#: .\school\templates\layouts\default\404.html:42
+#: .\school\templates\layouts\default\page.html:124
+msgid "Back to top"
+msgstr "Torna in cima"
+
 #: .\school\templates\layouts\default\page.html:32
 msgid "Home"
 msgstr "Home"
@@ -304,10 +317,6 @@ msgstr "Entra"
 #: .\school\templates\school\sign_up.html:10
 msgid "Create an account"
 msgstr "Crea un account"
-
-#: .\school\templates\layouts\default\page.html:120
-msgid "Back to top"
-msgstr "Torna in cima"
 
 #: .\school\templates\school\emails\activate_profile.html:15
 #: .\school\templates\school\emails\activate_profile.txt:3
