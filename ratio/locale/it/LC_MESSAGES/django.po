@@ -324,7 +324,7 @@ msgid ""
 "platform where you can find other mathematicians and fight them."
 msgstr ""
 "Ratio (dal Latino, ratio, -onis, \"intelligenza, somma, etc...\") è la "
-"piattaforma nella quale puoi trovare altre matematici e competere con loro."
+"piattaforma nella quale puoi trovare altri matematici e competere con loro."
 
 #: .\school\templates\school\emails\activate_profile.html:15
 #: .\school\templates\school\emails\activate_profile.txt:3
