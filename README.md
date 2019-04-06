@@ -13,12 +13,19 @@
 **Ratio** (from Latin, *ratio, -onis*, "intelligence, sum, etc...") is the platform where you can find other mathematicians and *fight* them.
 
 #### Summary
+ * [Introduction](#introduction)
  * [How to contribute](#how-to-contribute)
  * [License](#license)
  
+# Introduction
+
+Ratio is a simple and minimal platform written using [Django](https://github.com/django/django) that let you join competitions and compete with others.
+
+You may want to create your own profile, use your own email, watch competitions, see leaderboards & final results. Of course Ratio has implemented all of those features.
+ 
 ## How to contribute
 
-You may read [our contributing guide](CONTRIBUTING.md) in order to contribute to this project. Thank you, anyway.
+This project is maintained by @hearot, but you might want to join him anyway. You may read [our contributing guide](CONTRIBUTING.md) in order to contribute to this project. Thank you.
 
 ## License
 
