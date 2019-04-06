@@ -67,13 +67,16 @@ DISABLE_USERNAME = False
 
 INSTALLED_APPS = [
     'bootstrap4',
+    'competition',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'school'
+    'hreflang',
+    'school',
+    'tinymce'
 ]
 
 LANGUAGE_CODE = 'en'

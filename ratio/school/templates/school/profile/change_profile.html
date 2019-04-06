@@ -3,17 +3,17 @@
 {% load bootstrap4 %}
 {% load i18n %}
 
+{% block title %}{% trans 'Profile' %} - {% trans 'Update email' %} | Ratio{% endblock %}
+
 {% block content %}
 
     <h4>{% trans 'Update profile' %}</h4>
 
     <form method="post">
-
         {% csrf_token %}
         {% bootstrap_form form %}
 
         <button class="btn btn-success">{% trans 'Change' %}</button>
-
     </form>
 
 {% endblock %}

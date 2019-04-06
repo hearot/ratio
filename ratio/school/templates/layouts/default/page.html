@@ -1,31 +1,35 @@
 {% load staticfiles %}
 {% load bootstrap4 %}
+{% load hreflang %}
 {% load i18n %}
 
 {% get_current_language as language_code %}
 
+<!DOCTYPE html>
 <html lang="{{ language_code }}">
 <head>
-
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Mathematicians, come here!">
+    <meta name="description" content="Quisque faber fortunae suae.">
     <meta name="author" content="Hearot">
 
     <link rel="icon" href="{% static 'favicon.ico' %}">
 
-    <title>Ratio</title>
+    <title>{% block title %}Ratio{% endblock %}</title>
 
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 
 </head>
 
 <body>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark static-top">
-    <a class="navbar-brand" href="/">{% trans 'Home' %}</a>
+    <a class="navbar-brand" href="{% url 'school:index' %}">{% trans 'Home' %}</a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault">
         <span class="navbar-toggler-icon"></span>
@@ -33,6 +37,10 @@
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'competition:competitions_default' %}">{% trans 'Competitions' %}</a>
+            </li>
+
             {% if request.user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'school:change_password' %}">{% trans 'Change password' %}</a>
@@ -56,17 +64,23 @@
             {% endif %}
 
             <li class="nav-item dropdown">
-            {% if language_code == "it" %}
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-icon-it"> </span> {% trans 'Italian' %}</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown09">
-                    <a class="dropdown-item" href="/en/"><span class="flag-icon flag-icon-us"> </span>  {% trans 'English' %}</a>
-                </div>
-            {% else %}
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-icon-us"> </span> {% trans 'English' %}</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown09">
-                    <a class="dropdown-item" href="/it/"><span class="flag-icon flag-icon-it"> </span>  {% trans 'Italian' %}</a>
-                </div>
-            {% endif %}
+                {% if language_code == "it" %}
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false"><span
+                            class="flag-icon flag-icon-it"> </span> {% trans 'Italian' %}</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown09">
+                        <a class="dropdown-item" href="{% translate_url 'en' %}"><span
+                                class="flag-icon flag-icon-us"> </span> {% trans 'English' %}</a>
+                    </div>
+                {% else %}
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false"><span
+                            class="flag-icon flag-icon-us"> </span> {% trans 'English' %}</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown09">
+                        <a class="dropdown-item" href="{% translate_url 'it' %}"><span
+                                class="flag-icon flag-icon-it"> </span> {% trans 'Italian' %}</a>
+                    </div>
+                {% endif %}
             </li>
         </ul>
     </div>
@@ -75,30 +89,62 @@
 <div class="container-fluid mt-3">
     {% bootstrap_messages %}
 
+    {% if success %}
+        <div class="alert alert-success" role="alert">
+            {{ success }}
+        </div>
+    {% endif %}
+
+    {% if error %}
+        <div class="alert alert-danger" role="alert">
+            {% if error_message %}
+                {{ error_message }}
+            {% else %}
+                {% trans 'An error occured.' %}
+            {% endif %}
+        </div>
+    {% endif %}
+
     {% block content %}
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mauris risus, molestie a nunc eget, porttitor iaculis augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at dictum nunc, sed rutrum erat. Nulla facilisi. Aenean molestie lacus blandit lorem facilisis euismod. Praesent lobortis augue non pellentesque efficitur. Maecenas sed mi blandit, porta magna ac, semper metus. Etiam at magna ut nibh interdum rutrum.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mauris risus, molestie a nunc eget, porttitor
+        iaculis augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at dictum nunc, sed rutrum erat.
+        Nulla facilisi. Aenean molestie lacus blandit lorem facilisis euismod. Praesent lobortis augue non pellentesque
+        efficitur. Maecenas sed mi blandit, porta magna ac, semper metus. Etiam at magna ut nibh interdum rutrum.
     {% endblock %}
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/esm/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<hr>
+<footer class="text-muted">
+    <div class="container">
+        <p class="float-right">
+            <a href="#">{% trans 'Back to top' %}</a>
+        </p>
+        <p>&copy; {% now 'Y' %} <a href="https://github.com/hearot">Hearot</a></p>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=AM_CHTML' async></script>
 
 <script>
-(function () {
-    'use strict';
+    (function () {
+        'use strict';
 
-    if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-        var msViewportStyle = document.createElement('style');
-        msViewportStyle.appendChild(
-            document.createTextNode(
-                '@-ms-viewport{width:auto!important}'
-            )
-        );
-        document.head.appendChild(msViewportStyle)
-    }
-}());
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            var msViewportStyle = document.createElement('style');
+            msViewportStyle.appendChild(
+                document.createTextNode(
+                    '@-ms-viewport{width:auto!important}'
+                )
+            );
+            document.head.appendChild(msViewportStyle)
+        }
+    }());
 </script>
+{% block custom_scripts %}{% endblock %}
 
 </body>
 </html>

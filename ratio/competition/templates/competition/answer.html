@@ -1,0 +1,19 @@
+{% extends 'layouts/default/page.html' %}
+
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block title %}{% trans 'Answer' %} - {{ contestant.competition.title }} | Ratio{% endblock %}
+
+{% block content %}
+    <h4>{% trans 'Answer' %} - {{ contestant.competition.title }}</h4>
+
+    <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+
+        <button class="btn btn-primary">{% trans 'Answer' %}</button>
+    </form>
+
+    <hr>
+{% endblock %}
