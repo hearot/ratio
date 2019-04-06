@@ -1,5 +1,6 @@
 django>=2.1.7
 django-bootstrap4
+django-cookie-law
 django-environ
 django_hreflang
 django-tinymce

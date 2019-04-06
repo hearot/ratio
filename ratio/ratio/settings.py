@@ -68,6 +68,7 @@ DISABLE_USERNAME = False
 INSTALLED_APPS = [
     'bootstrap4',
     'competition',
+    'cookielaw',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

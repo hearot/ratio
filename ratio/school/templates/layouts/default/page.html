@@ -1,5 +1,6 @@
 {% load staticfiles %}
 {% load bootstrap4 %}
+{% load cookielaw_tags %}
 {% load hreflang %}
 {% load i18n %}
 
@@ -23,7 +24,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
-
 </head>
 
 <body>
@@ -87,6 +87,10 @@
 </nav>
 
 <div class="container-fluid mt-3">
+    <div>
+        {% cookielaw_banner %}
+    </div>
+
     {% bootstrap_messages %}
 
     {% if success %}
@@ -130,6 +134,30 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=AM_CHTML' async></script>
 
 <script>
+    var Cookielaw = {
+        createCookie: function (name, value, days) {
+            var date = new Date(),
+                expires = '';
+            if (days) {
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toGMTString();
+            } else {
+                expires = "";
+            }
+            document.cookie = name + "=" + value + expires + "; path=/";
+        },
+
+        createCookielawCookie: function () {
+            this.createCookie('cookielaw_accepted', '1', 10 * 365);
+
+            if (typeof (window.jQuery) === 'function') {
+                jQuery('#CookielawBanner').slideUp();
+            } else {
+                document.getElementById('CookielawBanner').style.display = 'none';
+            }
+        }
+    };
+
     (function () {
         'use strict';
 
