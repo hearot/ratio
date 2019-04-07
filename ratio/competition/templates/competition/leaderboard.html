@@ -34,6 +34,12 @@
                                 class="btn btn-sm btn-outline-info mr-1">{% trans 'Answer' %}</button>
                     </a>
                 {% endif %}
+                {% if competition.has_started %}
+                    <a href="{% url "competition:questions" pk=competition.id %}">
+                        <button type="button"
+                                class="btn btn-sm btn-outline-warning mr-1">{% trans 'Questions' %}</button>
+                    </a>
+                {% endif %}
                 {% if competition.can_join_when_started and not competition.has_ended %}
                     {% if request.user.is_authenticated %}
                         <a href="{% url "competition:join_competition" pk=competition.id %}">

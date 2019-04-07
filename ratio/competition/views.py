@@ -167,6 +167,23 @@ def join_competition(request, pk: int):
     return render(request, "competition/join.html", {'competition': competition})
 
 
+def questions(request, pk: int):
+    """Renders the questions page"""
+    try:
+        competition = Competition.objects.get(id=pk)
+    except ObjectDoesNotExist:
+        return render(request, "layouts/default/page.html", {'error': True,
+                                                             'error_message':
+                                                                 _("The competition you want to watch doesn't exist!")})
+
+    if not competition.has_started():
+        return render(request, "layouts/default/page.html", {'error': True,
+                                                             'error_message':
+                                                                 _("The competition hasn't begun yet.")})
+
+    return render(request, "competition/questions.html", {'competition': competition})
+
+
 class WatchCompetitionView(generic.DetailView):
     """Renders the Competition leaderboard page."""
     context_object_name = "competition"
