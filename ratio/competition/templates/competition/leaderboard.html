@@ -125,6 +125,9 @@
         }
 
         leaderboard_api_request();
-        leaderboard_loop();
+
+        {% if not competition.has_ended and competition.has_started %}
+            leaderboard_loop();
+        {% endif %}
     </script>
 {% endblock %}
