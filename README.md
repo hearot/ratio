@@ -1,7 +1,7 @@
 # ratio
 
 <p align="center">
-    <img src="https://github.com/hearot/ratio/blob/master/ratio/static/logo.png" alt="ratio" height="250" weight="250"/>
+    <img src="https://github.com/hearot/ratio/blob/master/ratio/ratio/static/logo.png" alt="ratio" height="250" weight="250"/>
     <br>
     <i>Quisque faber fortunae suae.</i>
     <br>
