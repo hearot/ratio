@@ -31,8 +31,13 @@ from .utils import (
 
 
 class GuestOnlyView(View):
+    """Redirects to the index page if the user is
+    already authenticated"""
+
     def dispatch(self, request, *args, **kwargs):
-        # Redirect to the index page if the user already authenticated
+        """Checks if the user is authenticated and, if he is,
+        it will redirect him to the index page, otherwise it will
+        let him log in & do his stuff"""
         if request.user.is_authenticated:
             return redirect(settings.LOGIN_REDIRECT_URL)
 
@@ -40,10 +45,12 @@ class GuestOnlyView(View):
 
 
 class LogInView(GuestOnlyView, FormView):
+    """Renders the log in page"""
     template_name = 'school/log_in.html'
 
     @staticmethod
     def get_form_class(**kwargs):
+        """Returns the forms used in the template"""
         if settings.DISABLE_USERNAME or settings.LOGIN_VIA_EMAIL:
             return SignInViaEmailForm
 
@@ -56,20 +63,19 @@ class LogInView(GuestOnlyView, FormView):
     @method_decorator(csrf_protect)
     @method_decorator(never_cache)
     def dispatch(self, request, *args, **kwargs):
-        # Sets a test cookie to make sure the user has cookies enabled
+        """Sets a test cookie to make sure the user has
+        cookies enabled"""
         request.session.set_test_cookie()
 
         return super().dispatch(request, *args, **kwargs)
 
     def form_valid(self, form):
+        """Checks if the form is valid"""
         request = self.request
 
-        # If the test cookie worked, go ahead and delete it since its no longer needed
         if request.session.test_cookie_worked():
             request.session.delete_test_cookie()
 
-        # The default Django's "remember me" lifetime is 2 weeks and can be changed by modifying
-        # the SESSION_COOKIE_AGE settings' option.
         if settings.USE_REMEMBER_ME:
             if not form.cleaned_data['remember_me']:
                 request.session.set_expiry(0)
@@ -86,15 +92,17 @@ class LogInView(GuestOnlyView, FormView):
 
 
 class SignUpView(GuestOnlyView, FormView):
+    """Renders the sign up page"""
     template_name = 'school/sign_up.html'
     form_class = SignUpForm
 
     def form_valid(self, form):
+        """Checks if the form is valid and sends the
+        activation email"""
         request = self.request
         user = form.save(commit=False)
 
         if settings.DISABLE_USERNAME:
-            # Set a temporary username
             user.username = get_random_string()
         else:
             user.username = form.cleaned_data['username']
@@ -102,10 +110,8 @@ class SignUpView(GuestOnlyView, FormView):
         if settings.ENABLE_USER_ACTIVATION:
             user.is_active = False
 
-        # Create a user record
         user.save()
 
-        # Change the username to the "user_ID" form
         if settings.DISABLE_USERNAME:
             user.username = f'user_{user.id}'
             user.save()
@@ -134,16 +140,18 @@ class SignUpView(GuestOnlyView, FormView):
 
 
 class ActivateView(View):
+    """Renders the activation page & tries to
+    activate the User object"""
+
     @staticmethod
     def get(request, code):
+        """Tries to activate the User object"""
         act = get_object_or_404(Activation, code=code)
 
-        # Activate profile
         user = act.user
         user.is_active = True
         user.save()
 
-        # Remove the activation record
         act.delete()
 
         messages.success(request, _('You have successfully activated your account!'))
@@ -152,16 +160,20 @@ class ActivateView(View):
 
 
 class ResendActivationCodeView(GuestOnlyView, FormView):
+    """Renders the 'resend activation code' page"""
     template_name = 'school/resend_activation_code.html'
 
     @staticmethod
     def get_form_class(**kwargs):
+        """Returns all the forms used that are being
+        used to resend the activation code"""
         if settings.DISABLE_USERNAME:
             return ResendActivationCodeViaEmailForm
 
         return ResendActivationCodeForm
 
     def form_valid(self, form):
+        """Checks if the form is valid"""
         user = form.user_cache
 
         activation = user.activation_set.first()
@@ -182,16 +194,21 @@ class ResendActivationCodeView(GuestOnlyView, FormView):
 
 
 class RestorePasswordView(GuestOnlyView, FormView):
+    """Renders the 'restore password' page and tries to
+    restore an user's password"""
     template_name = 'school/restore_password.html'
 
     @staticmethod
     def get_form_class(**kwargs):
+        """Returns all the forms that are being used to
+        restore the user's password"""
         if settings.RESTORE_PASSWORD_VIA_EMAIL_OR_USERNAME:
             return RestorePasswordViaEmailOrUsernameForm
 
         return RestorePasswordForm
 
     def form_valid(self, form):
+        """Checks if the form is valid"""
         user = form.user_cache
         token = default_token_generator.make_token(user)
         uid = urlsafe_base64_encode(force_bytes(user.pk)).decode()
@@ -202,10 +219,14 @@ class RestorePasswordView(GuestOnlyView, FormView):
 
 
 class ChangeProfileView(LoginRequiredMixin, FormView):
+    """Renders the 'change profile' page and tries to
+    change an user's information"""
     template_name = 'school/profile/change_profile.html'
     form_class = ChangeProfileForm
 
     def get_initial(self):
+        """Returns the user's first name &
+        last name"""
         user = self.request.user
         initial = super().get_initial()
         initial['first_name'] = user.first_name
@@ -213,6 +234,7 @@ class ChangeProfileView(LoginRequiredMixin, FormView):
         return initial
 
     def form_valid(self, form):
+        """Checks if the form is valid"""
         user = self.request.user
         user.first_name = form.cleaned_data['first_name']
         user.last_name = form.cleaned_data['last_name']
@@ -224,20 +246,26 @@ class ChangeProfileView(LoginRequiredMixin, FormView):
 
 
 class ChangeEmailView(LoginRequiredMixin, FormView):
+    """Renders the 'change email' page and tries to
+    change an user's email"""
     template_name = 'school/profile/change_email.html'
     form_class = ChangeEmailForm
 
     def get_form_kwargs(self):
+        """Returns the form keyword arguments by
+        adding the user's one"""
         kwargs = super().get_form_kwargs()
         kwargs['user'] = self.request.user
         return kwargs
 
     def get_initial(self):
+        """Returns the user's email"""
         initial = super().get_initial()
         initial['email'] = self.request.user.email
         return initial
 
     def form_valid(self, form):
+        """Checks if the form is valid"""
         user = self.request.user
         email = form.cleaned_data['email']
 
@@ -263,16 +291,17 @@ class ChangeEmailView(LoginRequiredMixin, FormView):
 
 
 class ChangeEmailActivateView(View):
+    """Renders the 'change email' activation page"""
+
     @staticmethod
     def get(request, code):
+        """Changes the user's email"""
         act = get_object_or_404(Activation, code=code)
 
-        # Change the email
         user = act.user
         user.email = act.email
         user.save()
 
-        # Remove the activation record
         act.delete()
 
         messages.success(request, _('You have successfully changed your email!'))
@@ -281,10 +310,12 @@ class ChangeEmailActivateView(View):
 
 
 class RemindUsernameView(GuestOnlyView, FormView):
+    """Renders the 'remind username' page"""
     template_name = 'school/remind_username.html'
     form_class = RemindUsernameForm
 
     def form_valid(self, form):
+        """Checks if the form is valid"""
         user = form.user_cache
         send_forgotten_username_email(user.email, user.username)
 
@@ -294,13 +325,13 @@ class RemindUsernameView(GuestOnlyView, FormView):
 
 
 class ChangePasswordView(BasePasswordChangeView):
+    """Renders the 'change password' page"""
     template_name = 'school/profile/change_password.html'
 
     def form_valid(self, form):
-        # Change the password
+        """Checks if the form is valid"""
         user = form.save()
 
-        # Re-authentication
         login(self.request, user)
 
         messages.success(self.request, _('Your password was changed.'))
@@ -309,10 +340,11 @@ class ChangePasswordView(BasePasswordChangeView):
 
 
 class RestorePasswordConfirmView(BasePasswordResetConfirmView):
+    """Renders the 'restore password' confirmation page."""
     template_name = 'school/restore_password_confirm.html'
 
     def form_valid(self, form):
-        # Change the password
+        """Checks if the form is valid"""
         form.save()
 
         messages.success(self.request, _('Your password has been set. You may go ahead and log in now.'))
