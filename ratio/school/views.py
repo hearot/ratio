@@ -130,7 +130,7 @@ class SignUpView(GuestOnlyView, FormView):
 
             messages.success(request, _('You are successfully signed up!'))
 
-        return redirect('index')
+        return redirect('school:index')
 
 
 class ActivateView(View):
@@ -321,12 +321,15 @@ class RestorePasswordConfirmView(BasePasswordResetConfirmView):
 
 
 class RestorePasswordDoneView(BasePasswordResetDoneView):
+    """Renders the restore password page."""
     template_name = 'school/restore_password_done.html'
 
 
 class LogOutView(LoginRequiredMixin, BaseLogoutView):
+    """Renders the logout page."""
     template_name = 'school/log_out.html'
 
 
 class IndexView(TemplateView):
+    """Renders the default index page."""
     template_name = 'layouts/default/page.html'
