@@ -98,7 +98,7 @@ msgstr "Inizia il"
 
 #: .\competition\templates\competition\list.html:69
 msgid "Ended on"
-msgstr "Termina il"
+msgstr "Terminata il"
 
 #: .\competition\templates\competition\list.html:71
 msgid "Started on"
