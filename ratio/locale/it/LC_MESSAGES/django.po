@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-06 22:41+0200\n"
+"POT-Creation-Date: 2019-04-07 14:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hearot <gabriel@hearot.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,28 +32,34 @@ msgid "Answer"
 msgstr "Rispondi"
 
 #: .\competition\templates\competition\description.html:6
-#: .\competition\templates\competition\leaderboard.html:50
+#: .\competition\templates\competition\leaderboard.html:56
 #: .\competition\templates\competition\list.html:63
+#: .\competition\templates\competition\questions.html:53
 msgid "Description"
 msgstr "Descrizione"
 
 #: .\competition\templates\competition\description.html:20
 #: .\competition\templates\competition\leaderboard.html:19
-#: .\competition\templates\competition\list.html:20 .\competition\views.py:156
+#: .\competition\templates\competition\list.html:20
+#: .\competition\templates\competition\questions.html:20
+#: .\competition\views.py:156
 msgid "You must be logged in to join a competition!"
 msgstr "Devi avere effettuato l'accesso per partecipare ad una competizione!"
 
 #: .\competition\templates\competition\description.html:35
 #: .\competition\templates\competition\list.html:47
+#: .\competition\templates\competition\questions.html:35
 msgid "Watch it!"
 msgstr "Seguila!"
 
 #: .\competition\templates\competition\description.html:43
 #: .\competition\templates\competition\description.html:47
-#: .\competition\templates\competition\leaderboard.html:41
-#: .\competition\templates\competition\leaderboard.html:45
+#: .\competition\templates\competition\leaderboard.html:47
+#: .\competition\templates\competition\leaderboard.html:51
 #: .\competition\templates\competition\list.html:54
 #: .\competition\templates\competition\list.html:58
+#: .\competition\templates\competition\questions.html:43
+#: .\competition\templates\competition\questions.html:47
 msgid "Join"
 msgstr "Partecipa"
 
@@ -70,11 +76,17 @@ msgstr "Ti sei registrato con successo!"
 msgid "Leaderboard"
 msgstr "Classifica"
 
-#: .\competition\templates\competition\leaderboard.html:62
+#: .\competition\templates\competition\leaderboard.html:40
+#: .\competition\templates\competition\questions.html:6
+#: .\competition\templates\competition\questions.html:28
+msgid "Questions"
+msgstr "Domande"
+
+#: .\competition\templates\competition\leaderboard.html:68
 msgid "Rank"
 msgstr "Posizione"
 
-#: .\competition\templates\competition\leaderboard.html:65
+#: .\competition\templates\competition\leaderboard.html:71
 msgid "Name"
 msgstr "Nome"
 
@@ -112,6 +124,10 @@ msgstr "Pagina successiva"
 msgid "Previous page"
 msgstr "Pagina precedente"
 
+#: .\competition\templates\competition\questions.html:69
+msgid "Explanation"
+msgstr "Spiegazione"
+
 #: .\competition\views.py:23
 msgid "The Competition you want to watch doesn't exist!"
 msgstr "La competizione che vuoi seguire non esiste!"
@@ -132,7 +148,7 @@ msgstr "Devi avere effettuato l'accesso per competere in una competizione!"
 msgid "You haven't joined that competition!"
 msgstr "Non ti sei iscritto a questa competizione!"
 
-#: .\competition\views.py:62
+#: .\competition\views.py:62 .\competition\views.py:182
 msgid "The competition hasn't begun yet."
 msgstr "La competizione non è ancora iniziata."
 
@@ -171,6 +187,10 @@ msgstr "La competizione a cui vuoi unirti è già finita!"
 #: .\competition\views.py:163
 msgid "You've already joined this competition!"
 msgstr "Ti sei già unito a questa competizione!"
+
+#: .\competition\views.py:177
+msgid "The competition you want to watch doesn't exist!"
+msgstr "La competizione che vuoi seguire non esiste!"
 
 #: .\ratio\settings.py:86 .\school\templates\layouts\default\page.html:73
 #: .\school\templates\layouts\default\page.html:78
@@ -274,7 +294,7 @@ msgid "W-we're going to fix it..."
 msgstr "L-lo sistemeremo..."
 
 #: .\school\templates\layouts\default\404.html:42
-#: .\school\templates\layouts\default\page.html:130
+#: .\school\templates\layouts\default\page.html:131
 msgid "Back to top"
 msgstr "Torna in cima"
 
@@ -318,7 +338,7 @@ msgstr "Entra"
 msgid "Create an account"
 msgstr "Crea un account"
 
-#: .\school\templates\layouts\default\page.html:121
+#: .\school\templates\layouts\default\page.html:122
 msgid ""
 "Ratio (from Latin, ratio, -onis, \"intelligence, sum, etc...\") is the "
 "platform where you can find other mathematicians and fight them."
@@ -478,52 +498,52 @@ msgstr "Attivazione del profilo"
 msgid "Your username"
 msgstr "Il tuo nome utente"
 
-#: .\school\views.py:124
+#: .\school\views.py:130
 msgid ""
 "You are signed up. To activate the account, follow the link sent to the mail."
 msgstr ""
 "Ti sei registrato. Per attivare il tuo account, utilizzare il link che ti "
 "abbiamo inviato per email."
 
-#: .\school\views.py:131
+#: .\school\views.py:137
 msgid "You are successfully signed up!"
 msgstr "Ti sei registrato con successo!"
 
-#: .\school\views.py:149
+#: .\school\views.py:157
 msgid "You have successfully activated your account!"
 msgstr "Hai attivato il tuo account con successo!"
 
-#: .\school\views.py:179
+#: .\school\views.py:191
 msgid "A new activation code has been sent to your email address."
 msgstr "Un nuovo codice d'attivazione è stato inviato al tuo indirizzo email."
 
-#: .\school\views.py:221
+#: .\school\views.py:243
 msgid "Profile data has been successfully updated."
 msgstr "I dati del profilo sono stati aggiornati con successo."
 
-#: .\school\views.py:255
+#: .\school\views.py:283
 msgid "To complete the change of email address, click on the link sent to it."
 msgstr ""
 "Per completare il cambiamento dell'email, clicca sul link inviato a "
 "quest'ultima."
 
-#: .\school\views.py:260
+#: .\school\views.py:288
 msgid "Email successfully changed."
 msgstr "Email cambiata con successo."
 
-#: .\school\views.py:278
+#: .\school\views.py:307
 msgid "You have successfully changed your email!"
 msgstr "Hai cambiato la tua email con successo!"
 
-#: .\school\views.py:291
+#: .\school\views.py:322
 msgid "Your username has been successfully sent to your email."
 msgstr "Il tuo nome utente è stato inviato alla tua email con successo."
 
-#: .\school\views.py:306
+#: .\school\views.py:337
 msgid "Your password was changed."
 msgstr "La tua password è stata cambiata."
 
-#: .\school\views.py:318
+#: .\school\views.py:350
 msgid "Your password has been set. You may go ahead and log in now."
 msgstr ""
 "La tua password è stata impostata. Adesso puoi andare avanti ed effettuare "
