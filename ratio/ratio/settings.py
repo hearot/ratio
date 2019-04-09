@@ -92,8 +92,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hreflang',
-    'school',
-    'tinymce'
+    'school'
 ]
 
 LANGUAGE_CODE = env.str("LANGUAGE_CODE")
