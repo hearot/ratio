@@ -16,7 +16,6 @@
 
 from typing import Dict, List
 
-import tinymce.models
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
@@ -58,7 +57,7 @@ class Competition(models.Model):
     """If an User can join the Competition even if
     this has already begun."""
 
-    description = tinymce.models.HTMLField()
+    description = models.TextField()
     """The Question text - the description"""
 
     end = models.DateTimeField()
@@ -173,10 +172,10 @@ class Question(models.Model):
     """How many points are subtracted to the `points` attribute
     when a correct answer is given"""
 
-    description = tinymce.models.HTMLField()
+    description = models.TextField()
     """The Question text - the description"""
 
-    explanation = tinymce.models.HTMLField()
+    explanation = models.TextField()
     """The explanation of the solution"""
 
     minimum = models.IntegerField(default=65, validators=[MinValueValidator(1)])
