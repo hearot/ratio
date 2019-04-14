@@ -35,7 +35,12 @@
                                     class="btn btn-sm btn-outline-danger mr-1">{% trans 'Watch it!' %}</button>
                         </a>
                     {% endif %}
-
+                    {% if competition.has_started and not competition.has_ended and has_joined %}
+                        <a href="{% url 'competition:answer' pk=competition.id %}">
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-info mr-1">{% trans 'Answer' %}</button>
+                        </a>
+                    {% endif %}
                     {% if competition.can_join_when_started and not competition.has_ended %}
                         {% if request.user.is_authenticated %}
                             <a href="{% url "competition:join_competition" pk=competition.id %}">
@@ -47,7 +52,6 @@
                                     onclick="$('.toast').toast('show')">{% trans 'Join' %}</button>
                         {% endif %}
                     {% endif %}
-
                     <a href="{% url "competition:competition_description" pk=competition.id %}">
                         <button type="button"
                                 class="btn btn-sm btn-outline-success mr-1">{% trans 'Description' %}</button>

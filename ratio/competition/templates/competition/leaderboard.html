@@ -29,7 +29,7 @@
 
             <div class="btn-group">
                 {% if competition.has_started and not competition.has_ended and has_joined %}
-                    <a href="{% url "competition:answer" pk=competition.id %}">
+                    <a href="{% url 'competition:answer' pk=competition.id %}">
                         <button type="button"
                                 class="btn btn-sm btn-outline-info mr-1">{% trans 'Answer' %}</button>
                     </a>
@@ -70,6 +70,9 @@
                     <th scope="col">
                         {% trans 'Name' %}
                     </th>
+                    <th scope="col">
+                        {% trans 'Total points' %}
+                    </th>
                     {% for question in questions %}
                         <th scope="col">
                             {{ forloop.counter }}
@@ -86,6 +89,27 @@
 
 {% block custom_scripts %}
     <script>
+        Array.prototype.sum = function () {
+            return (!this.length) ? 0 : this.slice(1).sum() +
+                ((typeof this[0] == 'number') ? this[0] : 0);
+        };
+
+        function leaderboard_sort(obj) {
+            var sortable = [];
+
+            for (var key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    sortable.push([key, obj[key]]);
+                }
+            }
+
+            sortable.sort(function (a, b) {
+                return -1 * (a[1].sum() - b[1].sum());
+            });
+
+            return sortable;
+        }
+
         function leaderboard_api_request() {
             var xmlhttp = new XMLHttpRequest();
             var url = "{% url "competition:api_leaderboard" pk=competition.id %}";
@@ -108,16 +132,20 @@
             var out = "";
             var i = 1;
 
+            leaderboard = leaderboard_sort(leaderboard);
+
             for (var key in leaderboard) {
                 if (leaderboard.hasOwnProperty(key)) {
-                    out += "<tr><td>" + i + "</td><td>" + key + "</td>";
+                    out += "<tr><td>#" + i + "</td><td>" + leaderboard[key][0] + "</td><td>" + leaderboard[key][1].sum() + "</td>";
 
-                    for (var index = 0; index < leaderboard[key].length; index++) {
-                        out += "<td>" + leaderboard[key][index] + "</td>";
+                    for (var index = 0; index < leaderboard[key][1].length; index++) {
+                        out += "<td>" + leaderboard[key][1][index] + "</td>";
                     }
-                }
 
-                i++;
+                    out += "</tr>";
+
+                    i++;
+                }
             }
 
             document.getElementById("leaderboard_body").innerHTML = out;
@@ -127,7 +155,7 @@
             setTimeout(function () {
                 leaderboard_api_request();
                 leaderboard_loop();
-            }, 3500);
+            }, 10000);
         }
 
         leaderboard_api_request();

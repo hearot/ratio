@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-07 14:25+0200\n"
+"POT-Creation-Date: 2019-04-14 13:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hearot <gabriel@hearot.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,11 +16,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\competition\forms.py:8
+#: .\competition\forms.py:24
 msgid "Given answer"
 msgstr "Risposta data"
 
-#: .\competition\forms.py:11
+#: .\competition\forms.py:27
 msgid "Question"
 msgstr "Domanda"
 
@@ -42,7 +42,7 @@ msgstr "Descrizione"
 #: .\competition\templates\competition\leaderboard.html:19
 #: .\competition\templates\competition\list.html:20
 #: .\competition\templates\competition\questions.html:20
-#: .\competition\views.py:156
+#: .\competition\views.py:172
 msgid "You must be logged in to join a competition!"
 msgstr "Devi avere effettuato l'accesso per partecipare ad una competizione!"
 
@@ -90,6 +90,10 @@ msgstr "Posizione"
 msgid "Name"
 msgstr "Nome"
 
+#: .\competition\templates\competition\leaderboard.html:74
+msgid "Total points"
+msgstr "Punti totali"
+
 #: .\competition\templates\competition\list.html:6
 #: .\competition\templates\competition\list.html:28
 #: .\school\templates\layouts\default\page.html:41
@@ -128,144 +132,144 @@ msgstr "Pagina precedente"
 msgid "Explanation"
 msgstr "Spiegazione"
 
-#: .\competition\views.py:23
+#: .\competition\views.py:39
 msgid "The Competition you want to watch doesn't exist!"
 msgstr "La competizione che vuoi seguire non esiste!"
 
-#: .\competition\views.py:27 .\school\templates\layouts\default\page.html:107
+#: .\competition\views.py:43 .\school\templates\layouts\default\page.html:107
 msgid "An error occured."
 msgstr "Si è verificato un errore."
 
-#: .\competition\views.py:39
+#: .\competition\views.py:55
 msgid "The competition you want to play doesn't exist!"
 msgstr "La competizione in cui stai cercando di competere non esiste!"
 
-#: .\competition\views.py:44
+#: .\competition\views.py:60
 msgid "You must be logged in to play a competition!"
 msgstr "Devi avere effettuato l'accesso per competere in una competizione!"
 
-#: .\competition\views.py:53
+#: .\competition\views.py:69
 msgid "You haven't joined that competition!"
 msgstr "Non ti sei iscritto a questa competizione!"
 
-#: .\competition\views.py:62 .\competition\views.py:182
+#: .\competition\views.py:78 .\competition\views.py:198
 msgid "The competition hasn't begun yet."
 msgstr "La competizione non è ancora iniziata."
 
-#: .\competition\views.py:69
+#: .\competition\views.py:85
 msgid "The competition is already over."
 msgstr "La competizione è già terminata."
 
-#: .\competition\views.py:79
+#: .\competition\views.py:95
 msgid "The question number is not valid."
 msgstr "Il numero della domanda non è valido."
 
-#: .\competition\views.py:88
+#: .\competition\views.py:104
 msgid "You've already answered to this question."
 msgstr "Hai già risposto a questa domanda."
 
-#: .\competition\views.py:96
+#: .\competition\views.py:112
 msgid "You've already given this answer."
 msgstr "Hai già dato questa risposta."
 
-#: .\competition\views.py:108
+#: .\competition\views.py:124
 msgid "The answer has been added!"
 msgstr "La risposta è stata aggiunta!"
 
-#: .\competition\views.py:139
+#: .\competition\views.py:155
 msgid "The competition you want to join doesn't exist!"
 msgstr "La competizione a cui vuoi unirti non esiste!"
 
-#: .\competition\views.py:144
+#: .\competition\views.py:160
 msgid "The competition you want to join has already begun!"
 msgstr "La competizione a cui vuoi unirti è già iniziata!"
 
-#: .\competition\views.py:150
+#: .\competition\views.py:166
 msgid "The competition you want to join is already over!"
 msgstr "La competizione a cui vuoi unirti è già finita!"
 
-#: .\competition\views.py:163
+#: .\competition\views.py:179
 msgid "You've already joined this competition!"
 msgstr "Ti sei già unito a questa competizione!"
 
-#: .\competition\views.py:177
+#: .\competition\views.py:193
 msgid "The competition you want to watch doesn't exist!"
 msgstr "La competizione che vuoi seguire non esiste!"
 
-#: .\ratio\settings.py:86 .\school\templates\layouts\default\page.html:73
+#: .\ratio\settings.py:101 .\school\templates\layouts\default\page.html:73
 #: .\school\templates\layouts\default\page.html:78
 msgid "English"
 msgstr "Inglese"
 
-#: .\ratio\settings.py:87 .\school\templates\layouts\default\page.html:70
+#: .\ratio\settings.py:102 .\school\templates\layouts\default\page.html:70
 #: .\school\templates\layouts\default\page.html:81
 msgid "Italian"
 msgstr "Italiano"
 
-#: .\ratio\urls.py:16
+#: .\ratio\urls.py:32
 msgid "404: Page not found!"
 msgstr "404: Pagina non trovata!"
 
-#: .\school\forms.py:18
+#: .\school\forms.py:34
 msgid "Password"
 msgstr "Password"
 
-#: .\school\forms.py:24
+#: .\school\forms.py:40
 msgid "Remember me"
 msgstr "Ricordami"
 
-#: .\school\forms.py:33
+#: .\school\forms.py:49
 msgid "You entered an invalid password."
 msgstr "Hai inserito una password non valida."
 
-#: .\school\forms.py:39
+#: .\school\forms.py:55
 msgid "Username"
 msgstr "Nome utente"
 
-#: .\school\forms.py:52
+#: .\school\forms.py:68
 msgid "You entered an invalid username."
 msgstr "Hai inserito un nome utente non valido."
 
-#: .\school\forms.py:55 .\school\forms.py:79 .\school\forms.py:103
-#: .\school\forms.py:190 .\school\forms.py:208 .\school\forms.py:251
+#: .\school\forms.py:71 .\school\forms.py:95 .\school\forms.py:119
+#: .\school\forms.py:206 .\school\forms.py:224 .\school\forms.py:267
 msgid "This account is not active."
 msgstr "Questo account non è attivo."
 
-#: .\school\forms.py:63 .\school\forms.py:115 .\school\forms.py:154
-#: .\school\forms.py:180 .\school\forms.py:221 .\school\forms.py:241
+#: .\school\forms.py:79 .\school\forms.py:131 .\school\forms.py:170
+#: .\school\forms.py:196 .\school\forms.py:237 .\school\forms.py:257
 msgid "Email"
 msgstr "Email"
 
-#: .\school\forms.py:76 .\school\forms.py:161 .\school\forms.py:187
-#: .\school\forms.py:248
+#: .\school\forms.py:92 .\school\forms.py:177 .\school\forms.py:203
+#: .\school\forms.py:264
 msgid "You entered an invalid email address."
 msgstr "Hai inserito un indirizzo email non valido."
 
-#: .\school\forms.py:87 .\school\forms.py:128 .\school\forms.py:198
+#: .\school\forms.py:103 .\school\forms.py:144 .\school\forms.py:214
 msgid "Email or Username"
 msgstr "Email o nome utente"
 
-#: .\school\forms.py:100 .\school\forms.py:135 .\school\forms.py:205
+#: .\school\forms.py:116 .\school\forms.py:151 .\school\forms.py:221
 msgid "You entered an invalid email address or username."
 msgstr "Hai inserito un indirizzo email o un nome utente errato."
 
-#: .\school\forms.py:115
+#: .\school\forms.py:131
 msgid "Required. Enter an existing email address."
 msgstr "Richiesto. Inserisci un indirizzo email esistente."
 
-#: .\school\forms.py:122
+#: .\school\forms.py:138
 msgid "You can not use this email address."
 msgstr "Non puoi utilizzare questo indirizzo email."
 
-#: .\school\forms.py:138 .\school\forms.py:164
+#: .\school\forms.py:154 .\school\forms.py:180
 msgid "This account has already been activated."
 msgstr "Quest'account è già stato attivato."
 
-#: .\school\forms.py:142 .\school\forms.py:168
+#: .\school\forms.py:158 .\school\forms.py:184
 msgid "Activation code not found."
 msgstr "Codice d'attivazione non trovato."
 
-#: .\school\forms.py:146 .\school\forms.py:172
+#: .\school\forms.py:162 .\school\forms.py:188
 msgid ""
 "Activation code has already been sent. You can request a new code in 24 "
 "hours."
@@ -273,19 +277,19 @@ msgstr ""
 "Il codice d'attivazione è già stato inviato. Puoi richiedere un nuovo codice "
 "tra 24 ore."
 
-#: .\school\forms.py:216
+#: .\school\forms.py:232
 msgid "First name"
 msgstr "Nome"
 
-#: .\school\forms.py:217
+#: .\school\forms.py:233
 msgid "Last name"
 msgstr "Cognome"
 
-#: .\school\forms.py:231
+#: .\school\forms.py:247
 msgid "Please enter another email."
 msgstr "Per favore, inserisci un'altra email"
 
-#: .\school\forms.py:235
+#: .\school\forms.py:251
 msgid "You can not use this mail."
 msgstr "Non puoi utilizzare questa email."
 
@@ -315,7 +319,7 @@ msgstr "Aggiorna profilo"
 
 #: .\school\templates\layouts\default\page.html:52
 #: .\school\templates\school\profile\change_email.html:6
-#: .\school\templates\school\profile\change_email.html:10 .\school\utils.py:36
+#: .\school\templates\school\profile\change_email.html:10 .\school\utils.py:52
 msgid "Change email"
 msgstr "Cambia email"
 
@@ -442,7 +446,7 @@ msgstr "Codice d'attivazione"
 #: .\school\templates\school\restore_password_confirm.html:6
 #: .\school\templates\school\restore_password_confirm.html:10
 #: .\school\templates\school\restore_password_done.html:5
-#: .\school\templates\school\restore_password_done.html:9 .\school\utils.py:47
+#: .\school\templates\school\restore_password_done.html:9 .\school\utils.py:63
 msgid "Restore password"
 msgstr "Ristabilisci la password"
 
@@ -490,60 +494,60 @@ msgstr "Registrati"
 msgid "Create"
 msgstr "Crea"
 
-#: .\school\utils.py:25
+#: .\school\utils.py:41
 msgid "Profile activation"
 msgstr "Attivazione del profilo"
 
-#: .\school\utils.py:59
+#: .\school\utils.py:75
 msgid "Your username"
 msgstr "Il tuo nome utente"
 
-#: .\school\views.py:130
+#: .\school\views.py:146
 msgid ""
 "You are signed up. To activate the account, follow the link sent to the mail."
 msgstr ""
 "Ti sei registrato. Per attivare il tuo account, utilizzare il link che ti "
 "abbiamo inviato per email."
 
-#: .\school\views.py:137
+#: .\school\views.py:153
 msgid "You are successfully signed up!"
 msgstr "Ti sei registrato con successo!"
 
-#: .\school\views.py:157
+#: .\school\views.py:173
 msgid "You have successfully activated your account!"
 msgstr "Hai attivato il tuo account con successo!"
 
-#: .\school\views.py:191
+#: .\school\views.py:207
 msgid "A new activation code has been sent to your email address."
 msgstr "Un nuovo codice d'attivazione è stato inviato al tuo indirizzo email."
 
-#: .\school\views.py:243
+#: .\school\views.py:259
 msgid "Profile data has been successfully updated."
 msgstr "I dati del profilo sono stati aggiornati con successo."
 
-#: .\school\views.py:283
+#: .\school\views.py:299
 msgid "To complete the change of email address, click on the link sent to it."
 msgstr ""
 "Per completare il cambiamento dell'email, clicca sul link inviato a "
 "quest'ultima."
 
-#: .\school\views.py:288
+#: .\school\views.py:304
 msgid "Email successfully changed."
 msgstr "Email cambiata con successo."
 
-#: .\school\views.py:307
+#: .\school\views.py:323
 msgid "You have successfully changed your email!"
 msgstr "Hai cambiato la tua email con successo!"
 
-#: .\school\views.py:322
+#: .\school\views.py:338
 msgid "Your username has been successfully sent to your email."
 msgstr "Il tuo nome utente è stato inviato alla tua email con successo."
 
-#: .\school\views.py:337
+#: .\school\views.py:353
 msgid "Your password was changed."
 msgstr "La tua password è stata cambiata."
 
-#: .\school\views.py:350
+#: .\school\views.py:366
 msgid "Your password has been set. You may go ahead and log in now."
 msgstr ""
 "La tua password è stata impostata. Adesso puoi andare avanti ed effettuare "
