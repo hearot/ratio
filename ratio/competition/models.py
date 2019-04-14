@@ -87,12 +87,8 @@ class Competition(models.Model):
         """Returns a dictionary where the key is
         an username and the value is a list with all
         the points got by the user."""
-        leaderboard = {contestant.user.username: contestant.get_list_points() for contestant in
-                       self.get_contestants()}
-
-        return {key: leaderboard[key] for key in sorted(leaderboard,
-                                                        key=lambda key: sum(leaderboard[key])
-                                                        if leaderboard[key] else 0, reverse=True)}
+        return {contestant.user.username: contestant.get_list_points() for contestant in
+                self.get_contestants()}
 
     def get_questions(self) -> List['Question']:
         """Returns a list of all the Questions that
