@@ -132,6 +132,18 @@ class CompetitionView(generic.DetailView):
     model = Competition
     template_name = "competition/description.html"
 
+    def get_context_data(self, **kwargs):
+        """Gets the other context datas."""
+        context = super().get_context_data(**kwargs)
+
+        try:
+            context['has_joined'] = context['competition'].is_contestant(
+                User.objects.get(username=self.request.user.username))
+        except Exception:
+            context['has_joined'] = False
+
+        return context
+
 
 def competitions(request, page: int = 1):
     """Renders the Competitions page."""
@@ -197,7 +209,14 @@ def questions(request, pk: int):
                                                              'error_message':
                                                                  _("The competition hasn't begun yet.")})
 
-    return render(request, "competition/questions.html", {'competition': competition})
+    try:
+        has_joined = competition.is_contestant(
+            User.objects.get(username=request.user.username))
+    except Exception:
+        has_joined = False
+
+    return render(request, "competition/questions.html", {'competition': competition,
+                                                          'has_joined': has_joined})
 
 
 class WatchCompetitionView(generic.DetailView):
