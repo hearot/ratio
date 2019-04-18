@@ -29,4 +29,4 @@ This project is maintained by [hearot](https://github.com/hearot), but you might
 
 ## License
 
-This library is licensed by the [GNU GENERAL PUBLIC LICENSE 3](https://github.com/hearot/ratio/blob/master/LICENSE).
+This library is licensed under [GNU GENERAL PUBLIC LICENSE 3](https://github.com/hearot/ratio/blob/master/LICENSE).
