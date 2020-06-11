@@ -46,7 +46,8 @@ class Answer(models.Model):
     def __str__(self) -> str:
         """Returns a representation of the object."""
         return str("%s (%s) - %s | %s" % (self.question, self.point,
-                                          self.contestant, self.contestant.competition))
+                                          self.contestant,
+                                          self.contestant.competition))
 
 
 class Competition(models.Model):
@@ -87,8 +88,8 @@ class Competition(models.Model):
         """Returns a dictionary where the key is
         an username and the value is a list with all
         the points got by the user."""
-        return {contestant.user.username: contestant.get_list_points() for contestant in
-                self.get_contestants()}
+        return {contestant.user.username: contestant.get_list_points()
+                for contestant in self.get_contestants()}
 
     def get_questions(self) -> List['Question']:
         """Returns a list of all the Questions that
@@ -112,7 +113,8 @@ class Competition(models.Model):
         """Returns if the passed User has
         joined the Competition."""
         try:
-            return Contestant.objects.get(competition=self, user=user) in self.get_contestants()
+            return (Contestant.objects.get(
+                competition=self, user=user) in self.get_contestants())
         except Exception:
             return False
 
@@ -145,12 +147,13 @@ class Contestant(models.Model):
     def get_list_points(self) -> List[int]:
         """Returns a list with all the points got from
         Questions."""
-        return [self.get_question_points(question) for question in
-                Question.objects.filter(competition=self.competition)]
+        return (self.get_question_points(question) for question in
+                Question.objects.filter(competition=self.competition))
 
     def get_question_points(self, question: 'Question') -> int:
         """Returns all the points got from a Question."""
-        return sum([answer.point for answer in self.get_answer_by_question(question)])
+        return sum(answer.point for answer in
+                   self.get_answer_by_question(question))
 
     def get_total_points(self) -> int:
         """Returns the total points."""
@@ -161,7 +164,8 @@ class Question(models.Model):
     """Represents a Question that could be given
     in a Competition."""
 
-    competition = models.ForeignKey('Competition', blank=False, on_delete=models.CASCADE)
+    competition = models.ForeignKey('Competition', blank=False,
+                                    on_delete=models.CASCADE)
     """To which Competition the Question is associated"""
 
     delta = models.IntegerField(default=-5, validators=[MaxValueValidator(0)])
@@ -174,7 +178,8 @@ class Question(models.Model):
     explanation = models.TextField()
     """The explanation of the solution"""
 
-    minimum = models.IntegerField(default=65, validators=[MinValueValidator(1)])
+    minimum = models.IntegerField(default=65,
+                                  validators=[MinValueValidator(1)])
     """The minimum points you can get if the answer is correct"""
 
     point = models.IntegerField(default=100, validators=[MinValueValidator(1)])
