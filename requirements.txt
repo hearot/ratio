@@ -2,4 +2,4 @@ django>=2.1.7
 django-bootstrap4==2.0.1
 django-cookie-law==2.0.3
 django-environ
-django_hreflang
+django_hreflang==2.2
