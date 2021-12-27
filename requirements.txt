@@ -1,5 +1,5 @@
 django>=2.1.7
-django-bootstrap4==2.0.1
+django-bootstrap4==21.2
 django-cookie-law==2.0.3
 django-environ==0.4.5
 django_hreflang==2.2
